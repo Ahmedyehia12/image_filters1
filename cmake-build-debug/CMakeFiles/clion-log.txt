@@ -1,40 +1,16 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\ehab\CLionProjects\image_filters1
+"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\hp\image_filters1
 -- The C compiler identification is GNU 11.2.0
 -- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
--- Detecting C compiler ABI info - failed
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc.exe
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc.exe - broken
-CMake Error at C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake:69 (message):
-  The C compiler
-
-    "C:/Program Files/JetBrains/CLion 2021.3.3/bin/mingw/bin/gcc.exe"
-
-  is not able to compile a simple test program.
-
-  It fails with the following output:
-
-    Change Dir: C:/Users/ehab/CLionProjects/image_filters1/cmake-build-debug/CMakeFiles/CMakeTmp
-    
-    Run Build Command(s):C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f Makefile cmTC_c808f/fast && C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe  -f CMakeFiles\cmTC_c808f.dir\build.make CMakeFiles/cmTC_c808f.dir/build
-    mingw32-make[1]: Entering directory 'C:/Users/ehab/CLionProjects/image_filters1/cmake-build-debug/CMakeFiles/CMakeTmp'
-    Building C object CMakeFiles/cmTC_c808f.dir/testCCompiler.c.obj
-    C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe    -o CMakeFiles\cmTC_c808f.dir\testCCompiler.c.obj -c C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
-    gcc.exe: fatal error: cannot execute 'C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/cc1.exe': CreateProcess: No such file or directory
-    compilation terminated.
-    mingw32-make[1]: *** [CMakeFiles\cmTC_c808f.dir\build.make:77: CMakeFiles/cmTC_c808f.dir/testCCompiler.c.obj] Error 1
-    mingw32-make[1]: Leaving directory 'C:/Users/ehab/CLionProjects/image_filters1/cmake-build-debug/CMakeFiles/CMakeTmp'
-    mingw32-make: *** [Makefile:126: cmTC_c808f/fast] Error 2
-    
-    
-
-  
-
-  CMake will not be able to correctly generate this project.
-Call Stack (most recent call first):
-  CMakeLists.txt:2 (project)
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/ehab/CLionProjects/image_filters1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "C:/Users/ehab/CLionProjects/image_filters1/cmake-build-debug/CMakeFiles/CMakeError.log".
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2021.3.4/bin/mingw/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/hp/image_filters1/cmake-build-debug

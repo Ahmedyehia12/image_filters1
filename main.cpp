@@ -1,8 +1,9 @@
 #include <iostream>
-#include "bmplib.cpp"
 #include<fstream>
 #include<cmath>
 #include <cstring>
+#include "bmplib.cpp"
+
 using namespace std;
 unsigned char image[SIZE][SIZE];
 
@@ -14,11 +15,15 @@ void saveImage();
 
 
 int main() {
+    cout << "Ahlan ya user ya habibi\n";
+    cout << "welcome to image filtering program!\n";
+
     loadImage();
-    BW();
     flip();
-    blurImage();
+    //blurImage();
     saveImage();
+    BW();
+
 
     return 0;
 }
@@ -36,9 +41,7 @@ void saveImage(){
     strcat(imageFileName,".bmp");
     writeGSBMP(imageFileName,image);
 }
-void blurImag(){
 
-}
 
 void BW(){
     long avg =0;
@@ -82,4 +85,7 @@ void flip() {
     } else {
         cout << "not an option";
     }
+}
+void blur(){
+
 }
