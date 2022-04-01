@@ -21,8 +21,8 @@ int main() {
     loadImage();
     saveImage();
 
-    flip();
-    //blurImage();
+    //flip();
+    blurImage();
     //BW();
 
 
@@ -88,6 +88,13 @@ void flip() {
         cout << "not an option";
     }
 }
-void blur(){
+void blurImage(){
+
+    for(int i = 0;i<SIZE;i++){
+        for(int j = 0;j<SIZE;j++){
+            image[i][j]= (image[i-1][j-1]+image[i][j-1]+image[i+1][j-1]+image[i-1][j]+image[i][j]+image[i+1][j]+image[i-1][j+1]+image[i][j+1]+image[i+1][j+1])/9;
+
+        }
+    }
 
 }
