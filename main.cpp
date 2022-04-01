@@ -7,17 +7,17 @@ using namespace std;
 unsigned char image[SIZE][SIZE];
 
 void loadImage();
-//void BW();
+void BW();
 void flip();
-//void blurImage();
+void blurImage();
 void saveImage();
 
 
 int main() {
     loadImage();
-    //BW();
+    BW();
     flip();
-    //blurImage();
+    blurImage();
     saveImage();
 
     return 0;
@@ -36,29 +36,29 @@ void saveImage(){
     strcat(imageFileName,".bmp");
     writeGSBMP(imageFileName,image);
 }
-//void blurImag(){
-//
-//}
-//
-//void BW(){
-//    long avg =0;
-//    for(int i = 0; i< SIZE;i++){
-//        for(int j = 0; j < SIZE;j++){
-//            avg += image[i][j];
-//        }
-//    }
-//    avg/=( SIZE*SIZE);
-//    for(int i = 0; i< SIZE;i++) {
-//        for (int j = 0; j < SIZE; j++) {
-//            if (image[i][j] > avg){
-//                        image[i][j] = 255;
-//                }
-//            else {
-//                image[i][j] = 0;
-//            }
-//        }
-//    }
-//}
+void blurImag(){
+
+}
+
+void BW(){
+    long avg =0;
+    for(int i = 0; i< SIZE;i++){
+        for(int j = 0; j < SIZE;j++){
+            avg += image[i][j];
+        }
+    }
+    avg/=( SIZE*SIZE);
+    for(int i = 0; i< SIZE;i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (image[i][j] > avg){
+                        image[i][j] = 255;
+                }
+            else {
+                image[i][j] = 0;
+            }
+        }
+    }
+}
 void flip() {
     string op;
     cout << "Flip (h)orizontally or (v)ertically ?\n";
