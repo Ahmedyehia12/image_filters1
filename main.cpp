@@ -18,16 +18,37 @@ void LD();
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
+    cout << "1-Black and White\n"<<"2-Blur\n"<<"3-flip\n"<<"4-darken and lighten\n";
+    cout << "choose:";
+    int choose;
+    cin >> choose;
+    switch(choose){
+        case 1: loadImage();
+        BW();
+        saveImage();
+        break;
+        case 2: loadImage();
+        blurImage();
+        saveImage();
+            break;
 
-    loadImage();
-    //blurImage();
-    LD();
-    saveImage();
+        case 3:loadImage();
+        flip();
+        saveImage();
+            break;
+
+        case 4:
+            loadImage();
+            LD();
+            saveImage();
+            break;
 
 
-    //flip();
-    //blurImage();
-    //BW();
+    }
+
+
+
+
 
 
     return 0;
