@@ -21,7 +21,7 @@ int main() {
 
     loadImage();
     saveImage();
-    LD();
+    //LD();
 
     //flip();
     //blurImage();
