@@ -127,12 +127,7 @@ void LD(){char choice; long avg=0;
     cout << "(d)arken or (l)ighten:";
     cin >> choice;
     if(choice == 'd'){
-    for(int i = 0; i< SIZE;i++) {
-        for (int j = 0; j < SIZE; j++) {
-            avg += image[i][j];
-        }
-    }
-    avg/=(SIZE*SIZE);
+
     for(int i = 0; i< SIZE;i++){
         for(int j = 0; j < SIZE;j++){
            if(image[i][j]>127) {image[i][j] = image[i][j]-127;}
@@ -143,12 +138,6 @@ void LD(){char choice; long avg=0;
         }
     }
     else if(choice == 'l'){
-        for(int i = 0; i< SIZE;i++) {
-            for (int j = 0; j < SIZE; j++) {
-                avg += image[i][j];
-            }
-        }
-        avg/=(SIZE*SIZE);
         for(int i = 0; i< SIZE;i++) {
             for (int j = 0; j < SIZE; j++) {
                if(image[i][j]<127) {image[i][j]+=127;}
