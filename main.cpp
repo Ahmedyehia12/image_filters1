@@ -117,7 +117,7 @@ void blurImage(){
 
     for(int i = 0;i<SIZE;i++){
         for(int j = 0;j<SIZE;j++){
-            image[i][j]= (image[i-1][j-1]+image[i][j-1]+image[i+1][j-1]+image[i-1][j]+image[i][j]+image[i+1][j]+image[i-1][j+1]+image[i][j+1]+image[i+1][j+1])/9;
+            image[i][j]= (image[i-1][j-1]+image[i][j-1]+image[i+1][j-1]+image[i-1][j]+image[i][j]+image[i+1][j] + image[i-1][j+1]+image[i][j+1]+image[i+1][j+1])/9;
 
         }
     }
@@ -135,7 +135,7 @@ void LD(){char choice; long avg=0;
     avg/=(SIZE*SIZE);
     for(int i = 0; i< SIZE;i++){
         for(int j = 0; j < SIZE;j++){
-           if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
+           if(image[i][j]>127) {image[i][j] = image[i][j]-127;}
             else{image[i][j] = 0;}
 
         }
@@ -151,7 +151,7 @@ void LD(){char choice; long avg=0;
         avg/=(SIZE*SIZE);
         for(int i = 0; i< SIZE;i++) {
             for (int j = 0; j < SIZE; j++) {
-               if(image[i][j]<avg) {image[i][j]+=avg;}
+               if(image[i][j]<127) {image[i][j]+=127;}
                else {image[i][j] = 255;}
 
             }
