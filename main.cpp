@@ -5,13 +5,21 @@
 #include <cstring>
 using namespace std;
 unsigned char image[SIZE][SIZE];
+
 void loadImage();
-void blurImage();
+//void BW();
+void flip();
+//void blurImage();
 void saveImage();
 
 
 int main() {
-    cout << "Hello, World!" << std::endl;
+    loadImage();
+    //BW();
+    flip();
+    //blurImage();
+    saveImage();
+
     return 0;
 }
 void loadImage(){
@@ -28,8 +36,50 @@ void saveImage(){
     strcat(imageFileName,".bmp");
     writeGSBMP(imageFileName,image);
 }
-void blurImag(){
-
+//void blurImag(){
+//
+//}
+//
+//void BW(){
+//    long avg =0;
+//    for(int i = 0; i< SIZE;i++){
+//        for(int j = 0; j < SIZE;j++){
+//            avg += image[i][j];
+//        }
+//    }
+//    avg/=( SIZE*SIZE);
+//    for(int i = 0; i< SIZE;i++) {
+//        for (int j = 0; j < SIZE; j++) {
+//            if (image[i][j] > avg){
+//                        image[i][j] = 255;
+//                }
+//            else {
+//                image[i][j] = 0;
+//            }
+//        }
+//    }
+//}
+void flip() {
+    string op;
+    cout << "Flip (h)orizontally or (v)ertically ?\n";
+    cin >> op;
+    if (op == "h") {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                int temp = image[i][j];
+                image[i][j] = image[i][SIZE - j];
+                image[i][SIZE - j] = temp;
+            }
+        }
+    } else if (op == "v") {
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                int temp = image[i][j];
+                image[i][j] = image[SIZE - i][j];
+                image[SIZE - i][j] = temp;
+            }
+        }
+    } else {
+        cout << "not an option";
+    }
 }
-
-
