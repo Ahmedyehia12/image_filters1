@@ -19,10 +19,11 @@ int main() {
     cout << "welcome to image filtering program!\n";
 
     loadImage();
-    //flip();
-    //blurImage();
     saveImage();
-    BW();
+
+    flip();
+    //blurImage();
+    //BW();
 
 
     return 0;
@@ -65,6 +66,7 @@ void BW(){
 void flip() {
     string op;
     cout << "Flip (h)orizontally or (v)ertically ?\n";
+    cin.ignore();
     cin >> op;
     if (op == "h") {
         for (int i = 0; i < SIZE; i++) {
