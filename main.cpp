@@ -135,14 +135,14 @@ void LD(){char choice; long avg=0;
     avg/=(SIZE*SIZE);
     for(int i = 0; i< SIZE;i++){
         for(int j = 0; j < SIZE;j++){
-            if(image[i][j] > avg){image[i][j] = image[i][j]-avg;}
+           if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
             else{image[i][j] = 0;}
 
         }
 
         }
     }
-    else if(choice == 'h'){
+    else if(choice == 'l'){
         for(int i = 0; i< SIZE;i++) {
             for (int j = 0; j < SIZE; j++) {
                 avg += image[i][j];
@@ -151,8 +151,9 @@ void LD(){char choice; long avg=0;
         avg/=(SIZE*SIZE);
         for(int i = 0; i< SIZE;i++) {
             for (int j = 0; j < SIZE; j++) {
-                if(image[i][j] > avg){image[i][j] = 255;}
-                else{image[i][j] = image[i][j] + avg;}
+               if(image[i][j]<avg) {image[i][j]+=avg;}
+               else {image[i][j] = 255;}
+
             }
         }
 
