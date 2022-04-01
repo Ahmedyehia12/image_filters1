@@ -20,7 +20,8 @@ int main() {
     cout << "welcome to image filtering program!\n";
 
     loadImage();
-    LD();
+    blurImage();
+    //LD();
     saveImage();
 
 
