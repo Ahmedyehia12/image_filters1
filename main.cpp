@@ -11,7 +11,11 @@ void saveImage();
 
 
 int main() {
-    cout << "Hello, World!" << std::endl;
+    cout << "Ahlan ya user ya habibi\n";
+    cout << "Welcome to image filtering program!\n";
+    loadImage();
+    saveImage();
+    blurImage();
     return 0;
 }
 void loadImage(){
