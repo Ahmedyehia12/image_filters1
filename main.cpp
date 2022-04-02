@@ -13,13 +13,14 @@ void flip();
 void blurImage();
 void saveImage();
 void LD();
+void merge();
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-darken and lighten\n" << "5-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-darken and lighten\n" << "5-merge\n"<<"6-end\n";
         cout << "choose:";
         int choose;
         cin >> choose;
@@ -47,6 +48,11 @@ int main() {
                 saveImage();
                 break;
             case 5:
+                loadImage();
+                merge();
+                saveImage();
+                break;
+            case 6:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -124,12 +130,14 @@ void flip() {
 }
 void blurImage(){
 
-    for(int i = 0;i<SIZE;i++){
-        for(int j = 0;j<SIZE;j++){
-            image[i][j]= (image[i-1][j-1]+image[i][j-1]+image[i+1][j-1]+image[i-1][j]+image[i][j]+image[i+1][j] + image[i-1][j+1]+image[i][j+1]+image[i+1][j+1])/9;
-
+    for(int i = 0;i<SIZE;i++) {
+        for (int j = 0; j < SIZE; j++) {
+            image[i][j] = (image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j - 1] + image[i - 1][j] + image[i][j] +
+                           image[i + 1][j] + image[i - 1][j + 1] + image[i][j + 1] + image[i + 1][j + 1]) / 9;
         }
     }
+
+
 
 }
 void LD(){char choice; long avg=0;
@@ -171,6 +179,20 @@ void LD(){char choice; long avg=0;
             }
         }
 
+    }
+
+}
+void merge(){
+    unsigned char image1[SIZE][SIZE];
+    char imageFileName1[100];
+    cout << "Enter the source image file name to merge :";
+    cin >> imageFileName1;
+    strcat(imageFileName1,".bmp");
+    readGSBMP(imageFileName1,image1);
+    for(int i =0;i<SIZE;i++){
+        for(int j =0;j<SIZE;j++){
+            image[i][j]=(image[i][j]+image1[i][j])/2;
+        }
     }
 
 }
