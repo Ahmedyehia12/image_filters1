@@ -145,30 +145,16 @@ void LD(){char choice; long avg=0;
     cout << "(d)arken or (l)ighten:";
     cin >> choice;
     if(choice == 'd'){
-        long avg =0;
-        for(int i = 0; i< SIZE;i++){
-            for(int j = 0; j < SIZE;j++){
-                avg += image[i][j];
-            }
-        }
-        avg/=( SIZE*SIZE);
+        unsigned char Bimage[SIZE][SIZE];
 
-    for(int i = 0; i< SIZE;i++){
-        for(int j = 0; j < SIZE;j++){
-           if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
-            else{image[i][j] = 0;}
-
-        }
-
-        }
     }
     else if(choice == 'l'){
 
-        unsigned char image39[SIZE][SIZE];
-        readGSBMP("white.bmp",image39);
+        unsigned char Wimage[SIZE][SIZE];
+        readGSBMP("white.bmp",Wimage);
         for(int i =0;i<SIZE;i++){
             for(int j =0;j<SIZE;j++){
-                image[i][j]=(image[i][j]+image39[i][j])/2;
+                image[i][j]=(image[i][j]+Wimage[i][j])/2;
             }
         }
 
