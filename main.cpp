@@ -2,6 +2,7 @@
 #include<fstream>
 #include<cmath>
 #include <cstring>
+#include <string>
 #include "bmplib.cpp"
 
 using namespace std;
@@ -14,73 +15,75 @@ void blurImage();
 void saveImage();
 void LD();
 void merge();
+void invert();
+void rotate();
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
-    cout << "welcome to image filtering program!\n";
+    cout << "welcome to image filtering program!\n\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-darken and lighten\n" << "5-merge\n"<<"6-end\n";
-        cout << "choose:";
+        loadImage();
+        cout << "\nWhat do you want to do now?\n  1-Black and White\n  2-Blur\n  3-Flip\n  4-Darken and lighten\n  5-Merge\n  6-Invert\n  7-Rotate\n  0-end\n";
+        cout << "Enter the number of the filter needed--->";
         int choose;
         cin >> choose;
         switch (choose) {
             case 1:
-                loadImage();
                 BW();
-                saveImage();
                 break;
             case 2:
-                loadImage();
                 blurImage();
-                saveImage();
                 break;
-
             case 3:
-                loadImage();
                 flip();
-                saveImage();
                 break;
-
             case 4:
-                loadImage();
                 LD();
-                saveImage();
                 break;
             case 5:
-                loadImage();
                 merge();
-                saveImage();
                 break;
             case 6:
+                invert();
+                break;
+            case 7:
+                rotate();
+                break;
+            case 0:
                 cout << "Thank you!";
                 check = false;
                 break;
-
-
         }
+        cin.ignore();
+        saveImage();
+        cout << "DONE\n\nTo Quit ---> Enter Q\nTo Continue ---> Enter 1\n---> ";
+        string c;
+        getline(cin,c);
+        if (c =="Q") break;
+        else if (c =="1") continue;
     }
-
-
-
-
-
-
     return 0;
 }
+
 void loadImage(){
-    char imageFileName[100];
-    cout << "Enter the source image file name:";
-    cin >> imageFileName;
-    strcat(imageFileName,".bmp");
-    readGSBMP(imageFileName,image);
+    string imageFileName;
+    cout << "Enter the source image file name without extension: ";
+    getline(cin,imageFileName);
+    imageFileName += ".bmp";
+    char* ptr= &imageFileName[0];
+    int n=readGSBMP(ptr,image);
+    if (n==1) loadImage();
+    else readGSBMP(ptr,image);
 }
+
 void saveImage(){
-    char imageFileName[100];
-    cout << "Enter the target image file name:";
-    cin >> imageFileName;
-    strcat(imageFileName,".bmp");
-    writeGSBMP(imageFileName,image);
+    string imageFileName;
+    cout << "Enter the target image file name without extension: ";
+    getline(cin,imageFileName);
+    imageFileName += ".bmp";
+    char* ptr= &imageFileName[0];
+    writeGSBMP(ptr,image);
 }
 
 
@@ -136,9 +139,6 @@ void blurImage(){
                            image[i + 1][j] + image[i - 1][j + 1] + image[i][j + 1] + image[i + 1][j + 1]) / 9;
         }
     }
-
-
-
 }
 void LD(){char choice; long avg=0;
     cout << "(d)arken or (l)ighten:";
@@ -194,5 +194,80 @@ void merge(){
             image[i][j]=(image[i][j]+image1[i][j])/2;
         }
     }
+}
 
+
+void invert()
+{
+    for(int i=0;i<SIZE;i++)
+    {
+        for(int j=0;j<SIZE;j++)
+        {
+            image[i][j] = 255 - image[i][j];
+        }
+    }
+}
+
+void rotate()
+{
+    unsigned char image1[SIZE][SIZE]={0};
+    cout << "\n1) 90 degrees\n2) 180 degrees\n3) 270 degrees\nEnter a number---> ";
+    string s;
+    cin >> s;
+    if(s=="1")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[j][SIZE-i-1]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else if(s=="2")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[SIZE-i-1][SIZE-j-1]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else if (s=="3")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[SIZE-j-1][i]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else
+    {
+        cout << "Error,enter a valid number\n";
+        rotate();
+    }
 }
