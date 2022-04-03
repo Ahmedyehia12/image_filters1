@@ -128,11 +128,22 @@ void flip() {
         cout << "not an option";
     }
 }
-void blurImage(){unsigned char image3[SIZE][SIZE];
-    readGSBMP("blur.bmp",image3);
-    for (int i = 0;i<SIZE;i++){
-        for(int j =0;j<SIZE;j++){
-            image[i][j] = (image[i][j]+image3[i][j])/2;
+void blurImage(){
+        int value;
+        for (int i=0 ; i<SIZE ; i+=2){
+            for (int j=0 ; j<SIZE ; j+=2){
+                value =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][i+2]+image[i+1][j+2]+image[i+2][j+1])/9);
+                image[i][j]=value;
+                image[i+1][j]=value;
+                image[i][j+1]=value;
+                image[i+1][j+1]=value;
+                image[i][j+2]=value;
+                image[i+2][j]=value;
+                image[i+2][i+2]=value;
+                image[i+1][j+2]=value;
+                image[i+2][j+1]=value;
+
+            }
         }
     }
 
@@ -140,7 +151,9 @@ void blurImage(){unsigned char image3[SIZE][SIZE];
 
 
 
-}
+
+
+
 void LD(){char choice; long avg=0;
     cout << "(d)arken or (l)ighten:";
     cin >> choice;
