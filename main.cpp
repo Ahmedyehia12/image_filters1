@@ -146,6 +146,12 @@ void LD(){char choice; long avg=0;
     cin >> choice;
     if(choice == 'd'){
         unsigned char Bimage[SIZE][SIZE];
+        readGSBMP("black.bmp",Bimage);
+        for(int i =0;i<SIZE;i++){
+            for(int j =0;j<SIZE;j++){
+                image[i][j]=(image[i][j]+Bimage[i][j])*2;
+            }
+        }
 
     }
     else if(choice == 'l'){
