@@ -128,8 +128,13 @@ void flip() {
         cout << "not an option";
     }
 }
-void blurImage(){
-    readGSBMP(blur.bmp,image);
+void blurImage(){unsigned char image3[SIZE][SIZE];
+    readGSBMP("blur.bmp",image3);
+    for (int i = 0;i<SIZE;i++){
+        for(int j =0;j<SIZE;j++){
+            image[i][j] = (image[i][j]+image3[i][j])/2;
+        }
+    }
 
 
 
@@ -158,22 +163,16 @@ void LD(){char choice; long avg=0;
         }
     }
     else if(choice == 'l'){
-        long avg =0;
-        for(int i = 0; i< SIZE;i++){
-            for(int j = 0; j < SIZE;j++){
-                avg += image[i][j];
+
+        unsigned char image39[SIZE][SIZE];
+        readGSBMP("white.bmp",image39);
+        for(int i =0;i<SIZE;i++){
+            for(int j =0;j<SIZE;j++){
+                image[i][j]=(image[i][j]+image39[i][j])/2;
             }
         }
-        avg/=( SIZE*SIZE);
-        for(int i = 0; i< SIZE;i++) {
-            for (int j = 0; j < SIZE; j++) {
-              if(image[i][j]<avg) {image[i][j]+=avg;}
-              else{image[i][j] = 255;}
 
 
-
-            }
-        }
 
     }
 
