@@ -3,6 +3,7 @@
 #include<cmath>
 #include <cstring>
 #include "bmplib.cpp"
+#include<string>
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
@@ -12,7 +13,6 @@ void BW();
 void flip();
 void blurImage();
 void saveImage();
-void LD();
 void merge();
 void invert();
 void rotate();
@@ -74,7 +74,7 @@ int main() {
 void loadImage(){
     char imageFileName[100];
     cout << "Enter the source image file name:";
-    cin >> imageFileName;
+    cin>>imageFileName;
     strcat(imageFileName,".bmp");
     readGSBMP(imageFileName,image);
 }
@@ -147,7 +147,8 @@ void blurImage(){
             image[i+1][j+2]=value;
             image[i+2][j+1]=value;
 
-        }}
+        }
+    }
 
 
 }
