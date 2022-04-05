@@ -59,6 +59,7 @@ int main() {
                 loadImage();
                 rotate();
                 saveImage();
+                break;
             case 7:
                 cout << "Thank you!";
                 check = false;
