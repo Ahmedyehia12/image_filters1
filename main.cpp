@@ -14,13 +14,16 @@ void blurImage();
 void saveImage();
 void LD();
 void merge();
+void invert();
+void rotate();
+
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-darken and lighten\n" << "5-merge\n"<<"6-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-end";
         cout << "choose:";
         int choose;
         cin >> choose;
@@ -44,7 +47,7 @@ int main() {
 
             case 4:
                 loadImage();
-                LD();
+                invert();
                 saveImage();
                 break;
             case 5:
@@ -53,6 +56,10 @@ int main() {
                 saveImage();
                 break;
             case 6:
+                loadImage();
+                rotate();
+                saveImage();
+            case 7:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -143,48 +150,7 @@ void blurImage(){
 
 
 }
-void LD(){char choice; long avg=0;
-    cout << "(d)arken or (l)ighten:";
-    cin >> choice;
-    if(choice == 'd'){
-        long avg =0;
-        for(int i = 0; i< SIZE;i++){
-            for(int j = 0; j < SIZE;j++){
-                avg += image[i][j];
-            }
-        }
-        avg/=( SIZE*SIZE);
 
-        for(int i = 0; i< SIZE;i++){
-            for(int j = 0; j < SIZE;j++){
-                if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
-                else{image[i][j] = 0;}
-
-            }
-
-        }
-    }
-    else if(choice == 'l'){
-        long avg =0;
-        for(int i = 0; i< SIZE;i++){
-            for(int j = 0; j < SIZE;j++){
-                avg += image[i][j];
-            }
-        }
-        avg/=( SIZE*SIZE);
-        for(int i = 0; i< SIZE;i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if(image[i][j]<avg) {image[i][j]+=avg;}
-                else{image[i][j] = 255;}
-
-
-
-            }
-        }
-
-    }
-
-}
 void merge(){
     unsigned char image1[SIZE][SIZE];
     char imageFileName1[100];
@@ -198,4 +164,78 @@ void merge(){
         }
     }
 
+}
+
+void invert()
+{
+    for(int i=0;i<SIZE;i++)
+    {
+        for(int j=0;j<SIZE;j++)
+        {
+            image[i][j] = 255 - image[i][j];
+        }
+    }
+}
+void rotate()
+{
+    unsigned char image1[SIZE][SIZE]={0};
+    cout << "\n1) 90 degrees\n2) 180 degrees\n3) 270 degrees\nEnter a number---> ";
+    string s;
+    cin >> s;
+    if(s=="1")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[j][SIZE-i-1]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else if(s=="2")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[SIZE-i-1][SIZE-j-1]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else if (s=="3")
+    {
+        for(int i=0;i<SIZE;i++)
+        {
+            for(int j=0;j<SIZE;j++)
+            {
+                image1[SIZE-j-1][i]=image[i][j];
+            }
+        }
+        for(int i=0;i<SIZE;i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+            {
+                image[i][j]=image1[i][j];
+            }
+        }
+    }
+    else
+    {
+        cout << "Error,enter a valid number\n";
+        rotate();
+    }
 }
