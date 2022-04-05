@@ -129,55 +129,55 @@ void flip() {
     }
 }
 void blurImage(){
-        int value;
-        for (int i=0 ; i<SIZE ; i+=2){
-            for (int j=0 ; j<SIZE ; j+=2){
-                value =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][i+2]+image[i+1][j+2]+image[i+2][j+1])/9);
-                image[i][j]=value;
-                image[i+1][j]=value;
-                image[i][j+1]=value;
-                image[i+1][j+1]=value;
-                image[i][j+2]=value;
-                image[i+2][j]=value;
-                image[i+2][i+2]=value;
-                image[i+1][j+2]=value;
-                image[i+2][j+1]=value;
 
-            }
+    for(int i = 0;i<SIZE;i++) {
+        for (int j = 0; j < SIZE; j++) {
+            image[i][j] = (image[i - 1][j - 1] + image[i][j - 1] + image[i + 1][j - 1] + image[i - 1][j] + image[i][j] +
+                           image[i + 1][j] + image[i - 1][j + 1] + image[i][j + 1] + image[i + 1][j + 1]) / 9;
         }
     }
 
 
 
-
-
-
-
-
+}
 void LD(){char choice; long avg=0;
     cout << "(d)arken or (l)ighten:";
     cin >> choice;
     if(choice == 'd'){
-        unsigned char Bimage[SIZE][SIZE];
-        readGSBMP("black.bmp",Bimage);
-        for(int i =0;i<SIZE;i++){
-            for(int j =0;j<SIZE;j++){
-                image[i][j]=(image[i][j]+Bimage[i][j])*2;
+        long avg =0;
+        for(int i = 0; i< SIZE;i++){
+            for(int j = 0; j < SIZE;j++){
+                avg += image[i][j];
             }
         }
+        avg/=( SIZE*SIZE);
 
+    for(int i = 0; i< SIZE;i++){
+        for(int j = 0; j < SIZE;j++){
+           if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
+            else{image[i][j] = 0;}
+
+        }
+
+        }
     }
     else if(choice == 'l'){
-
-        unsigned char Wimage[SIZE][SIZE];
-        readGSBMP("white.bmp",Wimage);
-        for(int i =0;i<SIZE;i++){
-            for(int j =0;j<SIZE;j++){
-                image[i][j]=(image[i][j]+Wimage[i][j])/2;
+        long avg =0;
+        for(int i = 0; i< SIZE;i++){
+            for(int j = 0; j < SIZE;j++){
+                avg += image[i][j];
             }
         }
+        avg/=( SIZE*SIZE);
+        for(int i = 0; i< SIZE;i++) {
+            for (int j = 0; j < SIZE; j++) {
+              if(image[i][j]<avg) {image[i][j]+=avg;}
+              else{image[i][j] = 255;}
 
 
+
+            }
+        }
 
     }
 
