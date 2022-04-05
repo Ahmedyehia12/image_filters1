@@ -95,8 +95,8 @@ void BW(){
     for(int i = 0; i< SIZE;i++) {
         for (int j = 0; j < SIZE; j++) {
             if (image[i][j] > avg){
-                        image[i][j] = 255;
-                }
+                image[i][j] = 255;
+            }
             else {
                 image[i][j] = 0;
             }
@@ -152,12 +152,12 @@ void LD(){char choice; long avg=0;
         }
         avg/=( SIZE*SIZE);
 
-    for(int i = 0; i< SIZE;i++){
-        for(int j = 0; j < SIZE;j++){
-           if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
-            else{image[i][j] = 0;}
+        for(int i = 0; i< SIZE;i++){
+            for(int j = 0; j < SIZE;j++){
+                if(image[i][j]>avg) {image[i][j] = image[i][j]-avg;}
+                else{image[i][j] = 0;}
 
-        }
+            }
 
         }
     }
@@ -171,8 +171,8 @@ void LD(){char choice; long avg=0;
         avg/=( SIZE*SIZE);
         for(int i = 0; i< SIZE;i++) {
             for (int j = 0; j < SIZE; j++) {
-              if(image[i][j]<avg) {image[i][j]+=avg;}
-              else{image[i][j] = 255;}
+                if(image[i][j]<avg) {image[i][j]+=avg;}
+                else{image[i][j] = 255;}
 
 
 
