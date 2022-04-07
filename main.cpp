@@ -1,3 +1,9 @@
+// FCI - Structured programming -2022 - Assignment 3
+// Author 1: Ahmed yehia abdel-moaty  ID:20210049   Group:A     S:3,4
+// Author 2 :Asmaa ismail Heikal      ID:20210067   Group:A     S:1,2
+// Author 3: Shahd abdel moamen       ID:20211053   Group:A     S:1,2
+// TA : Nesma , youssra
+
 #include <iostream>
 #include<fstream>
 #include<cmath>
