@@ -13,6 +13,7 @@
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
+unsigned char image2[SIZE/2][SIZE/2];
 
 void loadImage();
 void BW();
@@ -23,6 +24,7 @@ void merge();
 void invert();
 void rotate();
 void Dark_light();
+void shrink();
 
 bool check = true;
 
@@ -30,7 +32,7 @@ int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n"<<"9-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -73,6 +75,12 @@ int main() {
                 saveImage();
                 break;
             case 8:
+                loadImage();
+                shrink();
+                saveImage();
+                break;
+
+            case 9:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -274,12 +282,35 @@ void Dark_light(){
         case 'l':
             for(int i =0;i<SIZE;i++){
                 for(int j=0;j<SIZE;j++){
-                    if(image[i][j]<127){
-                        image[i][j] += (image[i][j])/2 ;
+                    if(image[i][j]+(image[i][j]/2) > 255){
+                        image[i][j] = 255;
                     }
-                    else{image[i][j] = 255;}
+                    else{image[i][j] += (image[i][j])/2;}
                 }
             }
             break;
     }
+}
+void shrink(){string choose;
+    cout << "shrink image to 1/2 or 1/3 or 1/4 :\n";
+    cin >> choose;
+    while(choose != "1/2"&&choose!="1/3"&&choose!= "1/4"){
+        cout << "invalid input ..please try again:";
+        cin >> choose;
+    }
+    if(choose == "1/2"){
+
+        for(int i =0;i<SIZE/2;i++){
+            for(int j=0;j<SIZE/2;j++){
+                image[i][j]=(image[i][j]+image[i+1][j+1]+image[i+2][j+2])/2;
+            }
+        }
+
+    }
+
+
+
+
+
+
 }
