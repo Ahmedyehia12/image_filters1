@@ -275,7 +275,7 @@ void Dark_light(){
             for(int i =0;i<SIZE;i++){
                 for(int j=0;j<SIZE;j++){
                     if(image[i][j]<255/2){
-                        image[i][j] += (image[i][j])/2;
+                        image[i][j] += 75;
 
                     }
                 }
