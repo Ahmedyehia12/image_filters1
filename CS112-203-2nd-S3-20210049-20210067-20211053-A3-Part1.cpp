@@ -22,6 +22,7 @@ void saveImage();
 void merge();
 void invert();
 void rotate();
+void Dark_light();
 
 bool check = true;
 
@@ -29,7 +30,7 @@ int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -67,6 +68,11 @@ int main() {
                 saveImage();
                 break;
             case 7:
+                loadImage();
+                Dark_light();
+                saveImage();
+                break;
+            case 8:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -245,5 +251,35 @@ void rotate()
     {
         cout << "Error,enter a valid number\n";
         rotate();
+    }
+}
+void Dark_light(){
+    char choice;
+    cout << "(d)arken or (l)ighten:";
+    cin >> choice;
+    while(choice != 'd' && choice != 'l'){
+        cout << "Invalid input\n";
+        cout << "choose again:";
+        cin >> choice;
+    }
+
+    switch(choice){
+        case 'd':
+            for(int i =0;i<SIZE;i++){
+                for(int j =0;j<SIZE;j++){
+                    image[i][j] = (image[i][j])/2; //0 is black and 255 is white therefore we are darkening every pixel by 50%
+                }
+            }
+            break;
+        case 'l':
+            for(int i =0;i<SIZE;i++){
+                for(int j=0;j<SIZE;j++){
+                    if(image[i][j]<255/2){
+                        image[i][j] += (image[i][j])/2;
+
+                    }
+                }
+            }
+            break;
     }
 }

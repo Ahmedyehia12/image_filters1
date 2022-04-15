@@ -128,29 +128,29 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s
 .PHONY : help
 
 

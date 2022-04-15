@@ -68,28 +68,28 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/main.cpp.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cpp.obj: ../main.cpp
-CMakeFiles/main.dir/main.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.obj -MF CMakeFiles\main.dir\main.cpp.obj.d -o CMakeFiles\main.dir\main.cpp.obj -c C:\Users\hp\image_filters1\main.cpp
+CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: ../CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp
+CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -MF CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj.d -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -c C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp
 
-CMakeFiles/main.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hp\image_filters1\main.cpp > CMakeFiles\main.dir\main.cpp.i
+CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp > CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
 
-CMakeFiles/main.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hp\image_filters1\main.cpp -o CMakeFiles\main.dir\main.cpp.s
+CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.cpp.obj"
+"CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main.exe: CMakeFiles/main.dir/main.cpp.obj
+main.exe: CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
 main.exe: CMakeFiles/main.dir/build.make
 main.exe: CMakeFiles/main.dir/linklibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
