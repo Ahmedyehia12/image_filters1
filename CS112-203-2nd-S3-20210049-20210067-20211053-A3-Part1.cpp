@@ -298,14 +298,15 @@ void shrink(){string choose;
         cin >> choose;
     }
     if(choose == "1/2"){
-        for(int i =0;i<SIZE;i+=2){ int c =0;
-            for(int j=0;j<SIZE;j+=2){
-                int s =0;       // c and s are counters
-                image[c][s] = image[i][j];
-                s++;
+        for(int i =0;i<SIZE;i++){
+            for(int j =0;j<SIZE;j++){
+                if(image[i][j] == 0){image[i][j]=image[i][j];}
+                else{
+                    image[i][j] = image[i+2][j+2];
+                }
             }
-            c++;
         }
+
 
     }
 
