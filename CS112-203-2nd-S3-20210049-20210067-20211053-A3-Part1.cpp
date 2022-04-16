@@ -291,25 +291,26 @@ void Dark_light() {
 
 }
 void shrink(){string choose;
-    cout << "shrink image to 1/2 or 1/3 or 1/4 :\n";
+    cout << "shrink image to 1/2 or 1/3 or 1/4 :";
     cin >> choose;
     while(choose != "1/2"&&choose!="1/3"&&choose!= "1/4"){
         cout << "invalid input ..please try again:";
         cin >> choose;
     }
     if(choose == "1/2") {
-        for (int i = 0, count = 0; i < SIZE; i++, count += 2) {
-            for (int j = 0, count1 = 0; j < SIZE; j++, count1 += 2) {
-                if (count < SIZE && count1 < SIZE) {
+        for(int i=0,count=0;i<SIZE;i++,count+=2){
+            for(int j=0,count1=0;j<SIZE;j++,count1+=2){
+                if(i < SIZE/2 && j<SIZE/2){
                     image[i][j] = image[count][count1];
-                } else { image[i][j] = 255; }
+                }
+                else{image[i][j] = 255;}
             }
         }
     }
       else if(choose == "1/3"){
         for(int i=0,count=0;i<SIZE;i++,count+=3){
             for(int j=0,count1=0;j<SIZE;j++,count1+=3){
-                if(count < SIZE && count1<SIZE){
+                if(i < SIZE/3 && j<SIZE/3){
                     image[i][j] = image[count][count1];
                 }
                 else{image[i][j] = 255;}
@@ -319,7 +320,7 @@ void shrink(){string choose;
       else if(choose == "1/4"){
         for(int i=0,count=0;i<SIZE;i++,count+=4){
             for(int j=0,count1=0;j<SIZE;j++,count1+=4){
-                if(count < SIZE && count1<SIZE){
+                if(i< SIZE/4 && j<SIZE/4){
                     image[i][j] = image[count][count1];
                 }
                 else{image[i][j] = 255;}
