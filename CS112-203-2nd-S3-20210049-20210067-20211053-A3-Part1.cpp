@@ -157,6 +157,7 @@ void blurImage(){
     for (int i=0 ; i<SIZE ; i+=2){
         for (int j=0 ; j<SIZE ; j+=2){
             Temp =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][i+2]+image[i+1][j+2]+image[i+2][j+1])/9);
+            // the average of every pixel affects the next one
             image[i][j]=Temp;
             image[i+1][j]=Temp;
             image[i][j+1]=Temp;
@@ -261,35 +262,33 @@ void rotate()
         rotate();
     }
 }
-void Dark_light(){
+void Dark_light() {
     char choice;
     cout << "(d)arken or (l)ighten:";
     cin >> choice;
-    while(choice != 'd' && choice != 'l'){
+    while (choice != 'd' && choice != 'l') {
         cout << "Invalid input\n";
         cout << "choose again:";
         cin >> choice;
     }
 
-    switch(choice){
+    switch (choice) {
         case 'd':
-            for(int i =0;i<SIZE;i++){
-                for(int j =0;j<SIZE;j++){
-                    image[i][j] = (image[i][j])/2; //0 is black and 255 is white therefore we are darkening every pixel by 50%
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    image[i][j] = (image[i][j]+0) /2; //0 is black and 255 is white therefore we are darkening every pixel by 50%
                 }
             }
             break;
         case 'l':
-            for(int i =0;i<SIZE;i++){
-                for(int j=0;j<SIZE;j++){
-                    if(image[i][j]+(image[i][j]/2) > 255){
-                        image[i][j] = 255;
-                    }
-                    else{image[i][j] += (image[i][j])/2;}
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    image[i][j] = (image[i][j] + 255) / 2;
                 }
             }
             break;
     }
+
 }
 void shrink(){string choose;
     cout << "shrink image to 1/2 or 1/3 or 1/4 :\n";
@@ -299,14 +298,19 @@ void shrink(){string choose;
         cin >> choose;
     }
     if(choose == "1/2"){
-
-        for(int i =0;i<SIZE/2;i++){
-            for(int j=0;j<SIZE/2;j++){
-                image[i][j]=(image[i][j]+image[i+1][j+1]+image[i+2][j+2])/2;
+        for(int i =0;i<SIZE;i+=2){ int c =0;
+            for(int j=0;j<SIZE;j+=2){
+                int s =0;       // c and s are counters
+                image[c][s] = image[i][j];
+                s++;
             }
+            c++;
         }
 
     }
+
+
+
 
 
 
