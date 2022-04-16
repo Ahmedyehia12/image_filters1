@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: \
- C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp \
+ C:\Users\Eyad\Downloads\my-github\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -142,8 +142,8 @@ CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstring \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/string.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:\Users\hp\image_filters1\bmplib.cpp \
- C:\Users\hp\image_filters1\bmplib.h \
+ C:\Users\Eyad\Downloads\my-github\image_filters1\bmplib.cpp \
+ C:\Users\Eyad\Downloads\my-github\image_filters1\bmplib.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/unistd.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/io.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/x86_64-w64-mingw32/include/getopt.h

@@ -25,6 +25,7 @@ void invert();
 void rotate();
 void Dark_light();
 void shrink();
+void enlarge();
 
 bool check = true;
 
@@ -32,7 +33,7 @@ int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n"<<"9-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"11-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -79,8 +80,12 @@ int main() {
                 shrink();
                 saveImage();
                 break;
-
             case 9:
+                loadImage();
+                enlarge();
+                saveImage();
+                break;
+            case 11:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -326,4 +331,125 @@ void shrink(){string choose;
             }
         }
       }
+}
+
+void enlarge()
+{
+    cout << "\n1) first quarter\n2) second quarter\n3) third quarter\n4) forth quarter\nChoose a number--->";
+    string s;
+    cin >> s;
+    if(s=="1")
+    {
+        unsigned char image1[SIZE/2][SIZE/2]={0};
+        for(int i =0;i<SIZE/2;i++)
+        {
+            for(int j=0;j<SIZE/2;j++)
+            {
+                image1[i][j]=image[i][j];
+            }
+        }
+        int r=0;
+        for(int i=0;i<SIZE/2;i++)
+        {
+            int c=0;
+            for (int j = 0; j < SIZE/2; j++)
+            {
+                image[r][c]=image1[i][j];
+                image[r+1][c]=image1[i][j];
+                image[r][c+1]=image1[i][j];
+                image[r+1][c+1]=image1[i][j];
+                c+=2;
+            }
+            r+=2;
+        }
+    }
+    else if(s=="4")
+    {
+        unsigned char image1[SIZE/2][SIZE/2]={0};
+        int s=0;
+        for(int i =128;i<SIZE;i++)
+        {
+            int t=0;
+            for(int j=128;j<SIZE;j++)
+            {
+                image1[s][t]=image[i][j];
+                t++;
+            }
+            s++;
+        }
+        int r=0;
+        for(int i=0;i<SIZE/2;i++)
+        {
+            int c = 0;
+            for (int j = 0; j < SIZE/2; j++) {
+                image[r][c] = image1[i][j];
+                image[r + 1][c] = image1[i][j];
+                image[r][c + 1] = image1[i][j];
+                image[r + 1][c + 1] = image1[i][j];
+                c += 2;
+            }
+            r += 2;
+        }
+    }
+    else if(s=="3")
+    {
+        unsigned char image1[SIZE/2][SIZE/2]={0};
+        int s=0;
+        for(int i =128;i<SIZE;i++)
+        {
+            int t=0;
+            for(int j=0;j<SIZE/2;j++)
+            {
+                image1[s][t]=image[i][j];
+                t++;
+            }
+            s++;
+        }
+        int r=0;
+        for(int i=0;i<SIZE/2;i++)
+        {
+            int c = 0;
+            for (int j = 0; j < SIZE/2; j++) {
+                image[r][c] = image1[i][j];
+                image[r + 1][c] = image1[i][j];
+                image[r][c + 1] = image1[i][j];
+                image[r + 1][c + 1] = image1[i][j];
+                c += 2;
+            }
+            r += 2;
+        }
+    }
+    else if(s=="2")
+    {
+        unsigned char image1[SIZE/2][SIZE/2]={0};
+        int s=0;
+        for(int i =0;i<SIZE/2;i++)
+        {
+            int t=0;
+            for(int j=128;j<SIZE;j++)
+            {
+                image1[s][t]=image[i][j];
+                t++;
+            }
+            s++;
+        }
+        int r=0;
+        for(int i=0;i<SIZE/2;i++)
+        {
+            int c = 0;
+            for (int j = 0; j < SIZE/2; j++) {
+                image[r][c] = image1[i][j];
+                image[r + 1][c] = image1[i][j];
+                image[r][c + 1] = image1[i][j];
+                image[r + 1][c + 1] = image1[i][j];
+                c += 2;
+            }
+            r += 2;
+        }
+    }
+    else
+    {
+        cout << "enter a valid number";
+        enlarge();
+    }
 }

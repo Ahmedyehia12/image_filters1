@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hp\image_filters1
+CMAKE_SOURCE_DIR = C:\Users\Eyad\Downloads\my-github\image_filters1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -71,16 +71,16 @@ include CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: ../CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -MF CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj.d -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -c C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -MF CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj.d -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj -c C:\Users\Eyad\Downloads\my-github\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp
 
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp > CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Eyad\Downloads\my-github\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp > CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
 
 CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Eyad\Downloads\my-github\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp -o CMakeFiles\main.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -94,7 +94,7 @@ main.exe: CMakeFiles/main.dir/build.make
 main.exe: CMakeFiles/main.dir/linklibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +106,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hp\image_filters1 C:\Users\hp\image_filters1 C:\Users\hp\image_filters1\cmake-build-debug C:\Users\hp\image_filters1\cmake-build-debug C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles\main.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Eyad\Downloads\my-github\image_filters1 C:\Users\Eyad\Downloads\my-github\image_filters1 C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\CMakeFiles\main.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 
