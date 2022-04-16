@@ -297,25 +297,33 @@ void shrink(){string choose;
         cout << "invalid input ..please try again:";
         cin >> choose;
     }
-    if(choose == "1/2"){
-        for(int i =0;i<SIZE;i++){
-            for(int j =0;j<SIZE;j++){
-                if(image[i][j] == 0){image[i][j]=image[i][j];}
-                else{
-                    image[i][j] = image[i+2][j+2];
-                }
+    if(choose == "1/2") {
+        for (int i = 0, count = 0; i < SIZE; i++, count += 2) {
+            for (int j = 0, count1 = 0; j < SIZE; j++, count1 += 2) {
+                if (count < SIZE && count1 < SIZE) {
+                    image[i][j] = image[count][count1];
+                } else { image[i][j] = 255; }
             }
         }
-
-
     }
-
-
-
-
-
-
-
-
-
+      else if(choose == "1/3"){
+        for(int i=0,count=0;i<SIZE;i++,count+=3){
+            for(int j=0,count1=0;j<SIZE;j++,count1+=3){
+                if(count < SIZE && count1<SIZE){
+                    image[i][j] = image[count][count1];
+                }
+                else{image[i][j] = 255;}
+            }
+        }
+      }
+      else if(choose == "1/4"){
+        for(int i=0,count=0;i<SIZE;i++,count+=4){
+            for(int j=0,count1=0;j<SIZE;j++,count1+=4){
+                if(count < SIZE && count1<SIZE){
+                    image[i][j] = image[count][count1];
+                }
+                else{image[i][j] = 255;}
+            }
+        }
+      }
 }
