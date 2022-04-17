@@ -10,6 +10,7 @@
 #include <cstring>
 #include "bmplib.cpp"
 #include<string>
+#include<sstream>
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
@@ -26,15 +27,17 @@ void rotate();
 void Dark_light();
 void shrink();
 void enlarge();
+void shuffle();
 void edge_detection();
-void miror();
+void mirror();
+
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"10-edge detection\n"<<"11-miror\n"<<"12-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n10-edge detection\n11-mirror\n12-shuffle\n"<<"0-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -93,10 +96,15 @@ int main() {
                 break;
             case 11:
                 loadImage();
-                miror();
+                mirror();
                 saveImage();
                 break;
             case 12:
+                loadImage();
+                cin.ignore();
+                shuffle();
+                break;
+            case 0:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -487,7 +495,8 @@ void edge_detection(){
         }
     }
 }
-void miror() {
+
+void mirror() {
     string op;
     cout << "Mirror (l)eft, (r)ight, (u)pper, (d)own side?\n";
     cin.ignore();
@@ -524,4 +533,88 @@ void miror() {
             }
         }
     }
+}
+
+void shuffle()
+{
+    unsigned char image1[256][256]={0};
+    int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
+    int arr[4];
+    cout << "Enter the order of the quarters : ";
+    for (int i=0;i<4;i++)
+    {
+        cin >> arr[i];
+        if(arr[i]==1)
+        {
+            a=0;
+            b=128;
+            c=0;
+            d=128;
+        }
+        else if(arr[i]==2)
+        {
+            a=0;
+            b=128;
+            c=128;
+            d=256;
+        }
+        else if(arr[i]==3)
+        {
+            a=128;
+            b=256;
+            c=0;
+            d=128;
+        }
+        else if(arr[i]==4)
+        {
+            a=128;
+            b=256;
+            c=128;
+            d=256;
+        }
+        if(i==0)
+        {
+            x=0;
+            z=0;
+            y=0;
+            r=0;
+        }
+        else if(i==1)
+        {
+            x=0;
+            z=0;
+            y=128;
+            r=128;
+        }
+        else if(i==2)
+        {
+            x=128;
+            y=0;
+            z=128;
+            r=0;
+        }
+        else if(i==3)
+        {
+            x=128;
+            y=128;
+            z=128;
+            r=128;
+        }
+        x=z;
+        for(int j=a;j<b;j++)
+        {
+            y=r;
+            for(int k=c;k<d;k++)
+            {
+                image1[x][y]=image[j][k];
+                y++;
+            }
+            x++;
+        }
+    }
+    char imageFileName[100];
+    cout << "Enter the target image file name:";
+    cin >> imageFileName;
+    strcat(imageFileName,".bmp");
+    writeGSBMP(imageFileName,image1);
 }
