@@ -26,14 +26,14 @@ void rotate();
 void Dark_light();
 void shrink();
 void enlarge();
-
+void edge_detection();
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"11-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"10-edge detection\n"<<"11-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -83,6 +83,11 @@ int main() {
             case 9:
                 loadImage();
                 enlarge();
+                saveImage();
+                break;
+            case 10:
+                loadImage();
+                edge_detection();
                 saveImage();
                 break;
             case 11:
@@ -452,5 +457,27 @@ void enlarge()
     {
         cout << "enter a valid number";
         enlarge();
+    }
+}
+void edge_detection(){
+    unsigned char tempimage[SIZE][SIZE];
+    long x,y,d;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+
+            y=(image[i-1][j-1]+image[i-1][j]+image[i-1][j+1])-image[i+1][j-1]-image[i+1][j]-image[i+1][j+1];
+
+            x=(image[i-1][j-1]+image[i][j-1]+image[i+1][j-1])-image[i-1][j+1]-image[i][j-1]-image[i+1][j+1];
+            d=sqrt(x*x+y*y);
+            if (d<190)
+                tempimage[i][j] = 255;
+            else
+                tempimage[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+            image[i][j]=tempimage[i][j];
+        }
     }
 }
