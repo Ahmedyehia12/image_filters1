@@ -27,13 +27,14 @@ void Dark_light();
 void shrink();
 void enlarge();
 void edge_detection();
+void miror();
 bool check = true;
 
 int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"10-edge detection\n"<<"11-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n"<<"10-edge detection\n"<<"11-miror\n"<<"12-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -91,6 +92,11 @@ int main() {
                 saveImage();
                 break;
             case 11:
+                loadImage();
+                miror();
+                saveImage();
+                break;
+            case 12:
                 cout << "Thank you!";
                 check = false;
                 break;
@@ -478,6 +484,44 @@ void edge_detection(){
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
             image[i][j]=tempimage[i][j];
+        }
+    }
+}
+void miror() {
+    string op;
+    cout << "Mirror (l)eft, (r)ight, (u)pper, (d)own side?\n";
+    cin.ignore();
+    cin >> op;
+    if (op == "l") {
+        for (int i = 0; i < SIZE ; i++) {
+            for (int j = SIZE/2; j < SIZE ; j++) {
+                image[i][j] = image[i][SIZE - j];
+
+            }
+        }
+    }
+    if (op == "r") {
+        for (int i = 0; i < SIZE ; i++) {
+            for (int j = 0; j < SIZE/2 ; j++) {
+                image[i][j] = image[i][SIZE - j];
+
+            }
+        }
+    }
+    if (op == "u") {
+        for (int i = SIZE/2; i < SIZE ; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                image[i][j] = image[SIZE-i][j];
+
+            }
+        }
+    }
+    if (op == "d") {
+        for (int i = 0; i < SIZE/2 ; i++) {
+            for (int j = 0; j < SIZE ; j++) {
+                image[i][j] = image[SIZE - i][j];
+
+            }
         }
     }
 }
