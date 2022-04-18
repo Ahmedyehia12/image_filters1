@@ -136,10 +136,22 @@ void flip()
 
 }
 void blurImage()
-{for(int i =0;i<SIZE;i++){
+{   int Temp;
+    for(int i =0;i<SIZE;i++){
     for(int j=0;j<SIZE;j++){
         for(int k=0;k<RGB;k++){
-            image[i][j][k];
+            Temp =((image[i-1][j-1][k]+(2*image[i-1][j][k])+image[i-1][j+1][k]+(2*image[i][j-1][k])+(4*image[i][j][k])+(2*image[i][j+1][k])+image[i+1][i-1][k]+(2*image[i+1][j][k])+image[i+1][j+1][k])/9);
+            image[i-1][j-1][k]=Temp;
+            image[i-1][j][k]=Temp;
+            image[i-1][j+1][k]=Temp;
+            image[i][j-1][k]=Temp;
+            image[i][j][k]=Temp;
+            image[i][j+1][k]=Temp;
+            image[i+1][j-1][k]=Temp;
+            image[i+1][j][k]=Temp;
+            image[i+1][j+1][k]=Temp;
+
+
         }
     }
 }
@@ -147,16 +159,16 @@ void blurImage()
 }
 
 void merge()
-{   unsigned char image1[SIZE][SIZE][RGB];
-    char imageFileName1[100];
+{   unsigned char image2[SIZE][SIZE][RGB];
+    char imageFileName2[100];
     cout << "Enter the source image file name to merge :";
-    cin >> imageFileName1;
-    strcat(imageFileName1,".bmp");
-    writeRGBBMP(imageFileName1,image);
+    cin >> imageFileName2;
+    strcat(imageFileName2,".bmp");
+    writeRGBBMP(imageFileName2,image);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
             for(int k =0;k<RGB;k++){
-                image[i][j][k]=(image[i][j][k]+image1[i][j][k])/2;
+                image[i][j][k]=(image[i][j][k]+image2[i][j][k])/2;
             }
         }
     }

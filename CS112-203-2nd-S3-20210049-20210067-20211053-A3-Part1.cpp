@@ -180,7 +180,7 @@ void blurImage(){
 
     for (int i=0 ; i<SIZE ; i+=2){
         for (int j=0 ; j<SIZE ; j+=2){
-            Temp =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][i+2]+image[i+1][j+2]+image[i+2][j+1])/9);
+            Temp =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][j+2]+image[i+1][j+2]+image[i+2][j+1])/9);
             // the average of every pixel affects the next one
             image[i][j]=Temp;
             image[i+1][j]=Temp;
@@ -188,7 +188,7 @@ void blurImage(){
             image[i+1][j+1]=Temp;
             image[i][j+2]=Temp;
             image[i+2][j]=Temp;
-            image[i+2][i+2]=Temp;
+            image[i+2][j+2]=Temp;
             image[i+1][j+2]=Temp;
             image[i+2][j+1]=Temp;
 
