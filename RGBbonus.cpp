@@ -159,16 +159,16 @@ void blurImage()
 }
 
 void merge()
-{   unsigned char image2[SIZE][SIZE][RGB];
-    char imageFileName2[100];
+{  unsigned char image1[SIZE][SIZE][RGB];
+    char imageFileName1[100];
     cout << "Enter the source image file name to merge :";
-    cin >> imageFileName2;
-    strcat(imageFileName2,".bmp");
-    writeRGBBMP(imageFileName2,image2);
+    cin >> imageFileName1;
+    strcat(imageFileName1,".bmp");
+    readRGBBMP(imageFileName1,image1);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
             for(int k =0;k<RGB;k++){
-                image[i][j][k]=(image[i][j][k]+image2[i][j][k])/2;
+                image[i][j][k]=(image[i][j][k]+image1[i][j][k])/2;
             }
         }
     }
