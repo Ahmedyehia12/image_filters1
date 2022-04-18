@@ -164,7 +164,7 @@ void merge()
     cout << "Enter the source image file name to merge :";
     cin >> imageFileName2;
     strcat(imageFileName2,".bmp");
-    writeRGBBMP(imageFileName2,image);
+    writeRGBBMP(imageFileName2,image2);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
             for(int k =0;k<RGB;k++){
