@@ -136,7 +136,13 @@ void flip()
 
 }
 void blurImage()
-{
+{for(int i =0;i<SIZE;i++){
+    for(int j=0;j<SIZE;j++){
+        for(int k=0;k<RGB;k++){
+            image[i][j][k];
+        }
+    }
+}
 
 }
 
@@ -149,7 +155,7 @@ void merge()
     writeRGBBMP(imageFileName1,image);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
-            for(int k =0;k<3;k++){
+            for(int k =0;k<RGB;k++){
                 image[i][j][k]=(image[i][j][k]+image1[i][j][k])/2;
             }
         }
@@ -252,11 +258,77 @@ void rotate()
     }
 }
 void Dark_light()
-{
+{    char choice;
+    cout << "(d)arken or (l)ighten:";
+    cin >> choice;
+    while (choice != 'd' && choice != 'l') {
+        cout << "Invalid input\n";
+        cout << "choose again:";
+        cin >> choice;}
+    switch (choice) {
+        case 'd':
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for(int k=0;k<RGB;k++){
+                    image[i][j][k] = (image[i][j][k]+0) /2;} //0 is black and 255 is white therefore we are darkening every pixel by 50%
+                }
+            }
+            break;
+        case 'l':
+            for (int i = 0; i < SIZE; i++) {
+                for (int j = 0; j < SIZE; j++) {
+                    for(int k =0;k<RGB;k++){
+                    image[i][j][k] = (image[i][j][k] + 255) / 2;}
+                }
+            }
+            break;
+    }
 
 }
-void shrink()
-{
+void shrink(){
+    string choose;
+    cout << "shrink image to 1/2 or 1/3 or 1/4 :";
+    cin >> choose;
+    while(choose != "1/2"&&choose!="1/3"&&choose!= "1/4"){
+        cout << "invalid input ..please try again:";
+        cin >> choose;
+    }if(choose == "1/2"){
+
+        for(int i=0,count=0;i<SIZE;i++,count+=2){
+            for(int j =0,count1=0;j<SIZE;j++,count1+=2){
+                for(int k=0;k<RGB;k++){
+                    if(i<SIZE/2 && j<SIZE/2){
+                        image[i][j][k]=image[count][count1][k];
+                    }
+                    else{image[i][j][k]=255;}
+                }
+            }
+        }}
+    else if(choose == "1/3"){for(int i=0,count=0;i<SIZE;i++,count+=3){
+            for(int j =0,count1=0;j<SIZE;j++,count1+=3){
+                for(int k=0;k<RGB;k++){
+                    if(i<SIZE/3 && j<SIZE/3){
+                        image[i][j][k]=image[count][count1][k];
+                    }
+                    else{image[i][j][k]=255;}
+                }
+            }
+        }
+
+    }
+    else if(choose == "1/4"){
+        for(int i=0,count=0;i<SIZE;i++,count+=4){
+            for(int j =0,count1=0;j<SIZE;j++,count1+=4){
+                for(int k=0;k<RGB;k++){
+                    if(i<SIZE/4 && j<SIZE/4){
+                        image[i][j][k]=image[count][count1][k];
+                    }
+                    else{image[i][j][k]=255;}
+                }
+            }
+        }
+    }
+
 
 }
 
