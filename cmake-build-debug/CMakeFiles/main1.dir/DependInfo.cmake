@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/hp/image_filters1/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp" "CMakeFiles/main1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj" "gcc" "CMakeFiles/main1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj.d"
+  "C:/Users/Eyad/Downloads/my-github/image_filters1/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp" "CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj" "gcc" "CMakeFiles/main.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj.d"
+  "C:/Users/Eyad/Downloads/my-github/image_filters1/RGBbonus.cpp" "CMakeFiles/main.dir/RGBbonus.cpp.obj" "gcc" "CMakeFiles/main.dir/RGBbonus.cpp.obj.d"
   )
 
 # Targets to which this target links.

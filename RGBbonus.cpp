@@ -10,11 +10,9 @@
 #include <cstring>
 #include "bmplib.cpp"
 #include<string>
-#include<sstream>
 
 using namespace std;
-unsigned char image[SIZE][SIZE];
-unsigned char image2[SIZE/2][SIZE/2];
+unsigned char image[SIZE][SIZE][RGB];
 
 void loadImage();
 void BW();
@@ -30,6 +28,7 @@ void enlarge();
 void shuffle();
 void edge_detection();
 void mirror();
+
 
 bool check = true;
 
@@ -108,108 +107,41 @@ int main() {
                 cout << "Thank you!";
                 check = false;
                 break;
-
-
         }
     }
-
-
 }
+
 void loadImage(){
     char imageFileName[100];
     cout << "Enter the source image file name:";
     cin>>imageFileName;
     strcat(imageFileName,".bmp");
-    readGSBMP(imageFileName,image);
+    readRGBBMP(imageFileName,image);
 }
+
 void saveImage(){
     char imageFileName[100];
     cout << "Enter the target image file name:";
     cin >> imageFileName;
     strcat(imageFileName,".bmp");
-    writeGSBMP(imageFileName,image);
+    writeRGBBMP(imageFileName,image);
 }
 
+void BW()
+{
 
-void BW(){
-    long avg =0;
-    for(int i = 0; i< SIZE;i++){
-        for(int j = 0; j < SIZE;j++){
-            avg += image[i][j];
-        }
-    }
-    avg/=( SIZE*SIZE);
-    for(int i = 0; i< SIZE;i++) {
-        for (int j = 0; j < SIZE; j++) {
-            if (image[i][j] > avg){
-                image[i][j] = 255;
-            }
-            else {
-                image[i][j] = 0;
-            }
-        }
-    }
 }
-void flip() {
-    string op;
-    cout << "Flip (h)orizontally or (v)ertically ?\n";
-    cin.ignore();
-    cin >> op;
-    if (op == "h") {
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE / 2; j++) {
-                int temp = image[i][j];
-                image[i][j] = image[i][SIZE - j];
-                image[i][SIZE - j] = temp;
-            }
-        }
-    } else if (op == "v") {
-        for (int i = 0; i < SIZE / 2; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                int temp = image[i][j];
-                image[i][j] = image[SIZE - i][j];
-                image[SIZE - i][j] = temp;
-            }
-        }
-    } else {
-        cout << "not an option";
-    }
+void flip()
+{
+
 }
-void blurImage(){
-    int Temp;
-
-    for (int i=0 ; i<SIZE ; i+=2){
-        for (int j=0 ; j<SIZE ; j+=2){
-            Temp =((image[i][j]+image[i+1][j]+image[i][j+1]+image[i+1][j+1]+image[i][j+2]+image[i+2][j]+image[i+2][i+2]+image[i+1][j+2]+image[i+2][j+1])/9);
-            // the average of every pixel affects the next one
-            image[i][j]=Temp;
-            image[i+1][j]=Temp;
-            image[i][j+1]=Temp;
-            image[i+1][j+1]=Temp;
-            image[i][j+2]=Temp;
-            image[i+2][j]=Temp;
-            image[i+2][i+2]=Temp;
-            image[i+1][j+2]=Temp;
-            image[i+2][j+1]=Temp;
-
-        }
-    }
-
+void blurImage()
+{
 
 }
 
-void merge(){
-    unsigned char image1[SIZE][SIZE];
-    char imageFileName1[100];
-    cout << "Enter the source image file name to merge :";
-    cin >> imageFileName1;
-    strcat(imageFileName1,".bmp");
-    readGSBMP(imageFileName1,image1);
-    for(int i =0;i<SIZE;i++){
-        for(int j =0;j<SIZE;j++){
-            image[i][j]=(image[i][j]+image1[i][j])/2;
-        }
-    }
+void merge()
+{
 
 }
 
@@ -219,13 +151,16 @@ void invert()
     {
         for(int j=0;j<SIZE;j++)
         {
-            image[i][j] = 255 - image[i][j];
+            for(int k=0;k<3;k++)
+            {
+                image[i][j][k] = 255 - image[i][j][k];
+            }
         }
     }
 }
 void rotate()
 {
-    unsigned char image1[SIZE][SIZE]={0};
+    unsigned char image1[SIZE][SIZE][RGB]={0};
     cout << "\n1) 90 degrees\n2) 180 degrees\n3) 270 degrees\nEnter a number---> ";
     string s;
     cin >> s;
@@ -235,14 +170,20 @@ void rotate()
         {
             for(int j=0;j<SIZE;j++)
             {
-                image1[j][SIZE-i-1]=image[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image1[j][SIZE - i - 1][k] = image[i][j][k];
+                }
             }
         }
         for(int i=0;i<SIZE;i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
-                image[i][j]=image1[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image[i][j][k] = image1[i][j][k];
+                }
             }
         }
     }
@@ -252,14 +193,20 @@ void rotate()
         {
             for(int j=0;j<SIZE;j++)
             {
-                image1[SIZE-i-1][SIZE-j-1]=image[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image1[SIZE - i - 1][SIZE - j - 1][k] = image[i][j][k];
+                }
             }
         }
         for(int i=0;i<SIZE;i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
-                image[i][j]=image1[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image[i][j][k] = image1[i][j][k];
+                }
             }
         }
     }
@@ -269,14 +216,20 @@ void rotate()
         {
             for(int j=0;j<SIZE;j++)
             {
-                image1[SIZE-j-1][i]=image[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image1[SIZE - j - 1][i][k] = image[i][j][k];
+                }
             }
         }
         for(int i=0;i<SIZE;i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
-                image[i][j]=image1[i][j];
+                for(int k=0;k<3;k++)
+                {
+                    image[i][j][k] = image1[i][j][k];
+                }
             }
         }
     }
@@ -286,71 +239,13 @@ void rotate()
         rotate();
     }
 }
-void Dark_light() {
-    char choice;
-    cout << "(d)arken or (l)ighten:";
-    cin >> choice;
-    while (choice != 'd' && choice != 'l') {
-        cout << "Invalid input\n";
-        cout << "choose again:";
-        cin >> choice;
-    }
-
-    switch (choice) {
-        case 'd':
-            for (int i = 0; i < SIZE; i++) {
-                for (int j = 0; j < SIZE; j++) {
-                    image[i][j] = (image[i][j]+0) /2; //0 is black and 255 is white therefore we are darkening every pixel by 50%
-                }
-            }
-            break;
-        case 'l':
-            for (int i = 0; i < SIZE; i++) {
-                for (int j = 0; j < SIZE; j++) {
-                    image[i][j] = (image[i][j] + 255) / 2;
-                }
-            }
-            break;
-    }
+void Dark_light()
+{
 
 }
-void shrink(){string choose;
-    cout << "shrink image to 1/2 or 1/3 or 1/4 :";
-    cin >> choose;
-    while(choose != "1/2"&&choose!="1/3"&&choose!= "1/4"){
-        cout << "invalid input ..please try again:";
-        cin >> choose;
-    }
-    if(choose == "1/2") {
-        for(int i=0,count=0;i<SIZE;i++,count+=2){
-            for(int j=0,count1=0;j<SIZE;j++,count1+=2){
-                if(i < SIZE/2 && j<SIZE/2){
-                    image[i][j] = image[count][count1];
-                }
-                else{image[i][j] = 255;}
-            }
-        }
-    }
-      else if(choose == "1/3"){
-        for(int i=0,count=0;i<SIZE;i++,count+=3){
-            for(int j=0,count1=0;j<SIZE;j++,count1+=3){
-                if(i < SIZE/3 && j<SIZE/3){
-                    image[i][j] = image[count][count1];
-                }
-                else{image[i][j] = 255;}
-            }
-        }
-      }
-      else if(choose == "1/4"){
-        for(int i=0,count=0;i<SIZE;i++,count+=4){
-            for(int j=0,count1=0;j<SIZE;j++,count1+=4){
-                if(i< SIZE/4 && j<SIZE/4){
-                    image[i][j] = image[count][count1];
-                }
-                else{image[i][j] = 255;}
-            }
-        }
-      }
+void shrink()
+{
+
 }
 
 void enlarge()
@@ -360,12 +255,14 @@ void enlarge()
     cin >> s;
     if(s=="1")
     {
-        unsigned char image1[SIZE/2][SIZE/2]={0};
+        unsigned char image1[SIZE/2][SIZE/2][RGB]={0};
         for(int i =0;i<SIZE/2;i++)
         {
             for(int j=0;j<SIZE/2;j++)
             {
-                image1[i][j]=image[i][j];
+                for(int k=0;k<3;k++) {
+                    image1[i][j][k] = image[i][j][k];
+                }
             }
         }
         int r=0;
@@ -374,25 +271,29 @@ void enlarge()
             int c=0;
             for (int j = 0; j < SIZE/2; j++)
             {
-                image[r][c]=image1[i][j];
-                image[r+1][c]=image1[i][j];
-                image[r][c+1]=image1[i][j];
-                image[r+1][c+1]=image1[i][j];
-                c+=2;
+                for(int k=0;k<3;k++) {
+                    image[r][c][k] = image1[i][j][k];
+                    image[r + 1][c][k] = image1[i][j][k];
+                    image[r][c + 1][k] = image1[i][j][k];
+                    image[r + 1][c + 1][k] = image1[i][j][k];
+                }
+                c += 2;
             }
             r+=2;
         }
     }
     else if(s=="4")
     {
-        unsigned char image1[SIZE/2][SIZE/2]={0};
+        unsigned char image1[SIZE/2][SIZE/2][RGB]={0};
         int s=0;
         for(int i =128;i<SIZE;i++)
         {
             int t=0;
             for(int j=128;j<SIZE;j++)
             {
-                image1[s][t]=image[i][j];
+                for(int k=0;k<3;k++) {
+                    image1[s][t][k] = image[i][j][k];
+                }
                 t++;
             }
             s++;
@@ -402,10 +303,12 @@ void enlarge()
         {
             int c = 0;
             for (int j = 0; j < SIZE/2; j++) {
-                image[r][c] = image1[i][j];
-                image[r + 1][c] = image1[i][j];
-                image[r][c + 1] = image1[i][j];
-                image[r + 1][c + 1] = image1[i][j];
+                for(int k=0;k<3;k++) {
+                    image[r][c][k] = image1[i][j][k];
+                    image[r + 1][c][k] = image1[i][j][k];
+                    image[r][c + 1][k] = image1[i][j][k];
+                    image[r + 1][c + 1][k] = image1[i][j][k];
+                }
                 c += 2;
             }
             r += 2;
@@ -413,14 +316,16 @@ void enlarge()
     }
     else if(s=="3")
     {
-        unsigned char image1[SIZE/2][SIZE/2]={0};
+        unsigned char image1[SIZE/2][SIZE/2][RGB]={0};
         int s=0;
         for(int i =128;i<SIZE;i++)
         {
             int t=0;
             for(int j=0;j<SIZE/2;j++)
             {
-                image1[s][t]=image[i][j];
+                for(int k=0;k<3;k++) {
+                    image1[s][t][k] = image[i][j][k];
+                }
                 t++;
             }
             s++;
@@ -430,10 +335,12 @@ void enlarge()
         {
             int c = 0;
             for (int j = 0; j < SIZE/2; j++) {
-                image[r][c] = image1[i][j];
-                image[r + 1][c] = image1[i][j];
-                image[r][c + 1] = image1[i][j];
-                image[r + 1][c + 1] = image1[i][j];
+                for(int k=0;k<3;k++) {
+                    image[r][c][k] = image1[i][j][k];
+                    image[r + 1][c][k] = image1[i][j][k];
+                    image[r][c + 1][k] = image1[i][j][k];
+                    image[r + 1][c + 1][k] = image1[i][j][k];
+                }
                 c += 2;
             }
             r += 2;
@@ -441,14 +348,16 @@ void enlarge()
     }
     else if(s=="2")
     {
-        unsigned char image1[SIZE/2][SIZE/2]={0};
+        unsigned char image1[SIZE/2][SIZE/2][RGB]={0};
         int s=0;
         for(int i =0;i<SIZE/2;i++)
         {
             int t=0;
             for(int j=128;j<SIZE;j++)
             {
-                image1[s][t]=image[i][j];
+                for(int k=0;k<3;k++) {
+                    image1[s][t][k] = image[i][j][k];
+                }
                 t++;
             }
             s++;
@@ -458,10 +367,12 @@ void enlarge()
         {
             int c = 0;
             for (int j = 0; j < SIZE/2; j++) {
-                image[r][c] = image1[i][j];
-                image[r + 1][c] = image1[i][j];
-                image[r][c + 1] = image1[i][j];
-                image[r + 1][c + 1] = image1[i][j];
+                for(int k=0;k<3;k++) {
+                    image[r][c][k] = image1[i][j][k];
+                    image[r + 1][c][k] = image1[i][j][k];
+                    image[r][c + 1][k] = image1[i][j][k];
+                    image[r + 1][c + 1][k] = image1[i][j][k];
+                }
                 c += 2;
             }
             r += 2;
@@ -473,71 +384,19 @@ void enlarge()
         enlarge();
     }
 }
-void edge_detection(){
-    unsigned char tempimage[SIZE][SIZE];
-    long x,y,d;
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j< SIZE; j++) {
+void edge_detection()
+{
 
-            y=(image[i-1][j-1]+image[i-1][j]+image[i-1][j+1])-image[i+1][j-1]-image[i+1][j]-image[i+1][j+1];
-
-            x=(image[i-1][j-1]+image[i][j-1]+image[i+1][j-1])-image[i-1][j+1]-image[i][j-1]-image[i+1][j+1];
-            d=sqrt(x*x+y*y);
-            if (d<190)
-                tempimage[i][j] = 255;
-            else
-                tempimage[i][j] = 0;
-        }
-    }
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j< SIZE; j++) {
-            image[i][j]=tempimage[i][j];
-        }
-    }
 }
 
-void mirror() {
-    string op;
-    cout << "Mirror (l)eft, (r)ight, (u)pper, (d)own side?\n";
-    cin.ignore();
-    cin >> op;
-    if (op == "l") {
-        for (int i = 0; i < SIZE ; i++) {
-            for (int j = SIZE/2; j < SIZE ; j++) {
-                image[i][j] = image[i][SIZE - j];
+void mirror()
+{
 
-            }
-        }
-    }
-    if (op == "r") {
-        for (int i = 0; i < SIZE ; i++) {
-            for (int j = 0; j < SIZE/2 ; j++) {
-                image[i][j] = image[i][SIZE - j];
-
-            }
-        }
-    }
-    if (op == "u") {
-        for (int i = SIZE/2; i < SIZE ; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                image[i][j] = image[SIZE-i][j];
-
-            }
-        }
-    }
-    if (op == "d") {
-        for (int i = 0; i < SIZE/2 ; i++) {
-            for (int j = 0; j < SIZE ; j++) {
-                image[i][j] = image[SIZE - i][j];
-
-            }
-        }
-    }
 }
 
 void shuffle()
 {
-    unsigned char image1[256][256]={0};
+    unsigned char image1[256][256][3]={0};
     int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
     int arr[4];
     cout << "Enter the order of the quarters : ";
@@ -606,7 +465,9 @@ void shuffle()
             y=r;
             for(int k=c;k<d;k++)
             {
-                image1[x][y]=image[j][k];
+                for(int l=0;l<3;l++) {
+                    image1[x][y][l] = image[j][k][l];
+                }
                 y++;
             }
             x++;
@@ -616,5 +477,5 @@ void shuffle()
     cout << "Enter the target image file name:";
     cin >> imageFileName;
     strcat(imageFileName,".bmp");
-    writeGSBMP(imageFileName,image1);
+    writeRGBBMP(imageFileName,image1);
 }

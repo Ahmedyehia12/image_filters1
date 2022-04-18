@@ -56,23 +56,13 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hp\image_filters1
+CMAKE_SOURCE_DIR = C:\Users\Eyad\Downloads\my-github\image_filters1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -84,11 +74,21 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles C:\Users\hp\image_filters1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\CMakeFiles C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Eyad\Downloads\my-github\image_filters1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main1
+# Target rules for targets named target_1
 
 # Build rule for target.
-main1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main1
-.PHONY : main1
+target_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_1
+.PHONY : target_1
 
 # fast build rule for target.
-main1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main1.dir\build.make CMakeFiles/main1.dir/build
-.PHONY : main1/fast
+target_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/build
+.PHONY : target_1/fast
+
+#=============================================================================
+# Target rules for targets named target_2
+
+# Build rule for target.
+target_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_2
+.PHONY : target_2
+
+# fast build rule for target.
+target_2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/build
+.PHONY : target_2/fast
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
 
 # target to build an object file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main1.dir\build.make CMakeFiles/main1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
@@ -141,7 +154,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i: CS112-203-2nd-S3-2021004
 
 # target to preprocess a source file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main1.dir\build.make CMakeFiles/main1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
@@ -149,8 +162,32 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s: CS112-203-2nd-S3-2021004
 
 # target to generate assembly for a file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main1.dir\build.make CMakeFiles/main1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+
+RGBbonus.obj: RGBbonus.cpp.obj
+.PHONY : RGBbonus.obj
+
+# target to build an object file
+RGBbonus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.obj
+.PHONY : RGBbonus.cpp.obj
+
+RGBbonus.i: RGBbonus.cpp.i
+.PHONY : RGBbonus.i
+
+# target to preprocess a source file
+RGBbonus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.i
+.PHONY : RGBbonus.cpp.i
+
+RGBbonus.s: RGBbonus.cpp.s
+.PHONY : RGBbonus.s
+
+# target to generate assembly for a file
+RGBbonus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.s
+.PHONY : RGBbonus.cpp.s
 
 # Help Target
 help:
@@ -160,10 +197,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main1
+	@echo ... target_1
+	@echo ... target_2
 	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
 	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i
 	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s
+	@echo ... RGBbonus.obj
+	@echo ... RGBbonus.i
+	@echo ... RGBbonus.s
 .PHONY : help
 
 
