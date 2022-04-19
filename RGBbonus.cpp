@@ -178,21 +178,10 @@ void flip()
 }
 
 void blurImage()
-{   int Temp;
-    for(int i =0;i<SIZE;i++){
+{   for(int i=0;i<SIZE;i++){
     for(int j=0;j<SIZE;j++){
-        for(int k=0;k<RGB;k++){
-            Temp =((image[i][j][k]+image[i+1][j][k]+image[i][j+1][k]+image[i+1][j+1][k]+image[i][j+2][k]+image[i+2][j][k]+image[i+2][j+2][k]+image[i+1][j+2][k]+image[i+2][j+1][k])/9);
-            // the average of every pixel affects the next one
-            image[i][j][k]=Temp;
-            image[i+1][j][k]=Temp;
-            image[i][j+1][k]=Temp;
-            image[i+1][j+1][k]=Temp;
-            image[i][j+2][k]=Temp;
-            image[i+2][j][k]=Temp;
-            image[i+2][j+2][k]=Temp;
-            image[i+1][j+2][k]=Temp;
-            image[i+2][j+1][k]=Temp;
+        for(int k=0;k<SIZE;k++){ //creating a 5x5 matrix and calculating the average in each pixel
+            image[i][j][k]=(image[i-2][j-2][k]+image[i-2][j-1][k]+image[i-2][j][k]+image[i-2][j+1][k]+image[i-2][j+2][k]+image[i-1][j-2][k]+image[i-1][j-1][k]+image[i-1][j][k]+image[i-1][j+1][k]+image[i-1][j+2][k]+image[i][j-2][k]+image[i][j-1][k]+image[i][j][k]+image[i][j+1][k]+image[i][j+2][k]+image[i+1][j-2][k]+image[i+1][j-1][k]+image[i+1][j][k]+image[i+1][j+1][k]+image[i+1][j+2][k]+image[i+2][j-2][k]+image[i+2][j-1][k]+image[i+2][j][k]+image[i+2][j+1][k]+image[i+2][j+2][k])/25;
 
         }
     }
