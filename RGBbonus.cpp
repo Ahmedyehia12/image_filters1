@@ -36,7 +36,7 @@ int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n10-edge detection\n11-mirror\n12-shuffle\n"<<"0-end\n";
+        cout << "xx1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n10-edge detection\n11-mirror\n12-shuffle\n"<<"0-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;
@@ -127,14 +127,56 @@ void saveImage(){
     writeRGBBMP(imageFileName,image);
 }
 
-void BW()
-{
+void BW() {
+    long avg = 0;
+    int k;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+                avg =(image[i][j][0]+image[i][j][1]+image[i][j][2])/3;
+                if (avg > 127) {
+                    image[i][j][0] = 255;
+                    image[i][j][1]=255;
+                    image[i][j][2]=255;
+                } else {
+                    image[i][j][0] = 0;
+                    image[i][j][1]=0;
+                    image[i][j][2]=0;
+                }
+            }
+        }
+    }
 
-}
 void flip()
 {
-
+    string op;
+    cout << "Flip (h)orizontally or (v)ertically ?\n";
+    cin.ignore();
+    cin >> op;
+    if (op == "v") {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE / 2; j++) {
+                for (int k=0; k < RGB; k++) {
+                    int temp = image[i][j][k];
+                    image[i][j][k] = image[i][SIZE - j][k];
+                    image[i][SIZE - j][k] = temp;
+                }
+            }
+        }
+    } else if (op == "h") {
+        for (int i = 0; i < SIZE / 2; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                for (int k=0; k < RGB; k++) {
+                int temp = image[i][j][k];
+                image[i][j][k] = image[SIZE - i][j][k];
+                image[SIZE - i][j][k] = temp;
+              }
+           }
+        }
+    } else {
+        cout << "not an option";
+    }
 }
+
 void blurImage()
 {   int Temp;
     for(int i =0;i<SIZE;i++){

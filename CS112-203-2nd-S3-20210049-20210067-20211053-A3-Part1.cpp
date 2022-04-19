@@ -155,7 +155,7 @@ void flip() {
     cout << "Flip (h)orizontally or (v)ertically ?\n";
     cin.ignore();
     cin >> op;
-    if (op == "h") {
+    if (op == "v") {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE / 2; j++) {
                 int temp = image[i][j];
@@ -163,7 +163,7 @@ void flip() {
                 image[i][SIZE - j] = temp;
             }
         }
-    } else if (op == "v") {
+    } else if (op == "h") {
         for (int i = 0; i < SIZE / 2; i++) {
             for (int j = 0; j < SIZE; j++) {
                 int temp = image[i][j];
