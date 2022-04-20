@@ -62,8 +62,8 @@ CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/target-1.dir/all
-all: CMakeFiles/target_2.dir/all
+all: CMakeFiles/target_1.dir/all
+all: CMakeFiles/target-2.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,61 +71,61 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/target-1.dir/clean
-clean: CMakeFiles/target_2.dir/clean
+clean: CMakeFiles/target_1.dir/clean
+clean: CMakeFiles/target-2.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/target-1.dir
+# Target rules for target CMakeFiles/target_1.dir
 
 # All Build rule for target.
-CMakeFiles/target-1.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target target-1"
-.PHONY : CMakeFiles/target-1.dir/all
+CMakeFiles/target_1.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target target_1"
+.PHONY : CMakeFiles/target_1.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/target-1.dir/rule: cmake_check_build_system
+CMakeFiles/target_1.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/target-1.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/target_1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/target-1.dir/rule
+.PHONY : CMakeFiles/target_1.dir/rule
 
 # Convenience name for target.
-target-1: CMakeFiles/target-1.dir/rule
-.PHONY : target-1
+target_1: CMakeFiles/target_1.dir/rule
+.PHONY : target_1
 
 # clean rule for target.
-CMakeFiles/target-1.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/clean
-.PHONY : CMakeFiles/target-1.dir/clean
+CMakeFiles/target_1.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/clean
+.PHONY : CMakeFiles/target_1.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/target_2.dir
+# Target rules for target CMakeFiles/target-2.dir
 
 # All Build rule for target.
-CMakeFiles/target_2.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target target_2"
-.PHONY : CMakeFiles/target_2.dir/all
+CMakeFiles/target-2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target target-2"
+.PHONY : CMakeFiles/target-2.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/target_2.dir/rule: cmake_check_build_system
+CMakeFiles/target-2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/target_2.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/target-2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/target_2.dir/rule
+.PHONY : CMakeFiles/target-2.dir/rule
 
 # Convenience name for target.
-target_2: CMakeFiles/target_2.dir/rule
-.PHONY : target_2
+target-2: CMakeFiles/target-2.dir/rule
+.PHONY : target-2
 
 # clean rule for target.
-CMakeFiles/target_2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/clean
-.PHONY : CMakeFiles/target_2.dir/clean
+CMakeFiles/target-2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/clean
+.PHONY : CMakeFiles/target-2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

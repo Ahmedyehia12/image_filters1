@@ -64,16 +64,6 @@ CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -83,6 +73,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,37 +116,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named target-1
+# Target rules for targets named target_1
 
 # Build rule for target.
-target-1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target-1
-.PHONY : target-1
+target_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_1
+.PHONY : target_1
 
 # fast build rule for target.
-target-1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/build
-.PHONY : target-1/fast
+target_1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/build
+.PHONY : target_1/fast
 
 #=============================================================================
-# Target rules for targets named target_2
+# Target rules for targets named target-2
 
 # Build rule for target.
-target_2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_2
-.PHONY : target_2
+target-2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target-2
+.PHONY : target-2
 
 # fast build rule for target.
-target_2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/build
-.PHONY : target_2/fast
+target-2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/build
+.PHONY : target-2/fast
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 
 # target to build an object file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
@@ -154,7 +154,7 @@ CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i: CS112-2022-2nd-S3-202100
 
 # target to preprocess a source file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
@@ -162,7 +162,7 @@ CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s: CS112-2022-2nd-S3-202100
 
 # target to generate assembly for a file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
@@ -170,7 +170,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj: CS112-203-2nd-S3-202100
 
 # target to build an object file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
@@ -178,7 +178,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i: CS112-203-2nd-S3-20210049
 
 # target to preprocess a source file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
@@ -186,7 +186,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s: CS112-203-2nd-S3-20210049
 
 # target to generate assembly for a file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
 
 # Help Target
@@ -197,8 +197,8 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... target-1
-	@echo ... target_2
+	@echo ... target-2
+	@echo ... target_1
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s

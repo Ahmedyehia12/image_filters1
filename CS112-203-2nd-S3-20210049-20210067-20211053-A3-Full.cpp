@@ -471,10 +471,10 @@ void edge_detection(){
 
             x=(image[i-1][j-1]+image[i][j-1]+image[i+1][j-1])-image[i-1][j+1]-image[i][j-1]-image[i+1][j+1];
             d=sqrt(x*x+y*y);
-            if (d<190)
-                tempimage[i][j] = 255;
-            else
+            if (d>90)
                 tempimage[i][j] = 0;
+            else
+                tempimage[i][j] = 255;
         }
     }
     for (int i = 0; i < SIZE; i++) {
