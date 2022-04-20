@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/target_2.dir/RGBbonus.cpp.obj"
-  "CMakeFiles/target_2.dir/RGBbonus.cpp.obj.d"
+  "CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj"
+  "CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj.d"
   "libtarget_2.dll.a"
   "target_2.exe"
   "target_2.exe.manifest"

@@ -141,53 +141,53 @@ target_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/build
 .PHONY : target_2/fast
 
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 
 # target to build an object file
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.obj
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i
 
 # target to preprocess a source file
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.i
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s
 
 # target to generate assembly for a file
-CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
-.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.cpp.s
+CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
+.PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 
-RGBbonus.obj: RGBbonus.cpp.obj
-.PHONY : RGBbonus.obj
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj
 
 # target to build an object file
-RGBbonus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.obj
-.PHONY : RGBbonus.cpp.obj
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
 
-RGBbonus.i: RGBbonus.cpp.i
-.PHONY : RGBbonus.i
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i
 
 # target to preprocess a source file
-RGBbonus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.i
-.PHONY : RGBbonus.cpp.i
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
 
-RGBbonus.s: RGBbonus.cpp.s
-.PHONY : RGBbonus.s
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s
 
 # target to generate assembly for a file
-RGBbonus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/RGBbonus.cpp.s
-.PHONY : RGBbonus.cpp.s
+CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+.PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
 
 # Help Target
 help:
@@ -199,12 +199,12 @@ help:
 	@echo ... rebuild_cache
 	@echo ... target-1
 	@echo ... target_2
-	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.obj
-	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.i
-	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Part1.s
-	@echo ... RGBbonus.obj
-	@echo ... RGBbonus.i
-	@echo ... RGBbonus.s
+	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
+	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i
+	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i
+	@echo ... CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s
 .PHONY : help
 
 
