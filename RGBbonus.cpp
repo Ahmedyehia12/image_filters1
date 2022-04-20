@@ -129,7 +129,6 @@ void saveImage(){
 
 void BW() {
     long avg = 0;
-    int k;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
                 avg =(image[i][j][0]+image[i][j][1]+image[i][j][2])/3;
@@ -525,11 +524,89 @@ void enlarge()
 void edge_detection()
 {
 
+    unsigned char tempimage[SIZE][SIZE][RGB];
+    long x,y,d;
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+            int up_left =(image[i-1][j-1][0]+image[i-1][j-1][1]+image[i-1][j-1][2])/3;
+            int up = (image[i-1][j][0]+image[i-1][j][1]+image[i-1][j][2])/3;
+            int up_right= (image[i-1][j+1][0]+image[i-1][j+1][1]+image[i-1][j+1][2])/3;
+            int down_left =(image[i+1][j-1][0]+image[i+1][j-1][1]+image[i+1][j-1][2])/3;
+            int down =(image[i+1][j][0]+image[i+1][j][1]+image[i+1][j][2])/3;
+            int down_right= (image[i+1][j+1][0]+image[i+1][j+1][1]+image[i+1][j+1][2])/3;
+            int mid_left = (image[i][j-1][0]+image[i][j-1][1]+image[i][j-1][2])/3;
+            int mid_right =(image[i][j-1][0]+image[i][j-1][1]+image[i][j-1][2])/3;
+
+            y=up_left+up+up_right-down_left-down-down_right;
+
+            x=up_left+mid_left+down_left-up_right-mid_right-down_right;
+            d=sqrt(x*x+y*y);
+            if (d>90){
+                tempimage[i][j][0] = 0;
+                tempimage[i][j][1] = 0;
+                tempimage[i][j][2] = 0;
+            }
+            else {
+                tempimage[i][j][0] = 255;
+                tempimage[i][j][1] = 255;
+                tempimage[i][j][2] = 255;
+            }
+        }
+    }
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j< SIZE; j++) {
+            for(int k = 0 ; k< RGB; k++) {
+                image[i][j][k] = tempimage[i][j][k];
+            }
+        }
+    }
 }
+
 
 void mirror()
 {
+    string op;
+    cout << "Mirror (l)eft, (r)ight, (u)pper, (d)own side?\n";
+    cin.ignore();
+    cin >> op;
+    if (op == "l") {
+        for (int i = 0; i < SIZE ; i++) {
+            for (int j = SIZE/2; j < SIZE ; j++) {
+                for(int k=0; k < RGB; k++) {
+                    image[i][j][k] = image[i][SIZE - j][k];
+                }
 
+            }
+        }
+    }
+    if (op == "r") {
+        for (int i = 0; i < SIZE ; i++) {
+            for (int j = 0; j < SIZE/2 ; j++) {
+                for(int k=0; k < RGB; k++) {
+                    image[i][j][k] = image[i][SIZE - j][k];
+                }
+
+            }
+        }
+    }
+    if (op == "u") {
+        for (int i = SIZE/2; i < SIZE ; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                for(int k=0; k < RGB; k++) {
+                    image[i][j][k] = image[SIZE - i][j][k];
+                }
+            }
+        }
+    }
+    if (op == "d") {
+        for (int i = 0; i < SIZE/2 ; i++) {
+            for (int j = 0; j < SIZE ; j++) {
+                for(int k=0; k < RGB; k++) {
+                    image[i][j][k] = image[SIZE - i][j][k];
+                }
+            }
+        }
+    }
 }
 
 void shuffle()
