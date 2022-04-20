@@ -179,7 +179,7 @@ void flip()
 
 void blurImage()
 {   for(int i=0;i<SIZE;i++){
-    for(int j=0;j<SIZE;j++){
+      for(int j=0;j<SIZE;j++){
         for(int k=0;k<SIZE;k++){ //creating a 5x5 matrix and calculating the average in each pixel
             image[i][j][k]=(image[i-2][j-2][k]+image[i-2][j-1][k]+image[i-2][j][k]+image[i-2][j+1][k]+image[i-2][j+2][k]+image[i-1][j-2][k]+image[i-1][j-1][k]+image[i-1][j][k]+image[i-1][j+1][k]+image[i-1][j+2][k]+image[i][j-2][k]+image[i][j-1][k]+image[i][j][k]+image[i][j+1][k]+image[i][j+2][k]+image[i+1][j-2][k]+image[i+1][j-1][k]+image[i+1][j][k]+image[i+1][j+1][k]+image[i+1][j+2][k]+image[i+2][j-2][k]+image[i+2][j-1][k]+image[i+2][j][k]+image[i+2][j+1][k]+image[i+2][j+2][k])/25;
 
