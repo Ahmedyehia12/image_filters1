@@ -68,28 +68,28 @@ include CMakeFiles/target_2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/target_2.dir/flags.make
 
-CMakeFiles/target_2.dir/RGBbonus.cpp.obj: CMakeFiles/target_2.dir/flags.make
-CMakeFiles/target_2.dir/RGBbonus.cpp.obj: ../RGBbonus.cpp
-CMakeFiles/target_2.dir/RGBbonus.cpp.obj: CMakeFiles/target_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/target_2.dir/RGBbonus.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/target_2.dir/RGBbonus.cpp.obj -MF CMakeFiles\target_2.dir\RGBbonus.cpp.obj.d -o CMakeFiles\target_2.dir\RGBbonus.cpp.obj -c C:\Users\ehab\CLionProjects\image_filters1\RGBbonus.cpp
+CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj: CMakeFiles/target_2.dir/flags.make
+CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj: ../CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp
+CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj: CMakeFiles/target_2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj -MF CMakeFiles\target_2.dir\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj.d -o CMakeFiles\target_2.dir\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj -c C:\Users\ehab\CLionProjects\image_filters1\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp
 
-CMakeFiles/target_2.dir/RGBbonus.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/target_2.dir/RGBbonus.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ehab\CLionProjects\image_filters1\RGBbonus.cpp > CMakeFiles\target_2.dir\RGBbonus.cpp.i
+CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ehab\CLionProjects\image_filters1\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp > CMakeFiles\target_2.dir\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 
-CMakeFiles/target_2.dir/RGBbonus.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/target_2.dir/RGBbonus.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ehab\CLionProjects\image_filters1\RGBbonus.cpp -o CMakeFiles\target_2.dir\RGBbonus.cpp.s
+CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ehab\CLionProjects\image_filters1\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp -o CMakeFiles\target_2.dir\CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 
 # Object files for target target_2
 target_2_OBJECTS = \
-"CMakeFiles/target_2.dir/RGBbonus.cpp.obj"
+"CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj"
 
 # External object files for target target_2
 target_2_EXTERNAL_OBJECTS =
 
-target_2.exe: CMakeFiles/target_2.dir/RGBbonus.cpp.obj
+target_2.exe: CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 target_2.exe: CMakeFiles/target_2.dir/build.make
 target_2.exe: CMakeFiles/target_2.dir/linklibs.rsp
 target_2.exe: CMakeFiles/target_2.dir/objects1.rsp
