@@ -533,18 +533,24 @@ void shuffle()
         for (int i=0;i<4;i++)
         {
             cin >> arr[i];}
-        bool check2 =true;
-    for(int i : arr){
-        if(arr[i]!= 1 && arr[i]!=2 && arr[i]!=3 && arr[i]!=4){
-            check2 = false;}}
+        bool check2 =false;
+    for(int i=0;i<4;i++){
+        if(arr[i]== 1 || arr[i]==2 || arr[i]==3 || arr[i]==4){
+            check2 = true;}}
 
 
         while(check2 == false){
             cout << "Invalid input ...please input order again:";
-            for(int i:arr){
+            for(int i=0;i<4;i++){
                 cin >> arr[i];
-            }}
-        for(int i : arr){
+            }
+            for(int i=0;i<4;i++){
+                if(arr[i] == 1 ||arr[i]==2 || arr[i]==3 ||arr[i]==4){
+                    check2 = true;
+                }
+            }
+        }
+        for(int i=0;i<4;i++){
 
         if(arr[i]==1)
         {
