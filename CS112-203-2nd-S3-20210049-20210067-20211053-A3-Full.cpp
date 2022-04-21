@@ -546,10 +546,11 @@ void shuffle()
             }
             for(int i=0;i<4;i++){
                 if(arr[i] == 1 ||arr[i]==2 || arr[i]==3 ||arr[i]==4){
-                    check2 = true;
+                    check2 = true;}
+
                 }
             }
-        }
+
         for(int i=0;i<4;i++){
 
         if(arr[i]==1)
