@@ -528,7 +528,7 @@ void shuffle()
     unsigned char image1[256][256]={0};
     int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
     int arr[4];
-    cout << "Enter the order of the quarters : ";
+    cout << "Enter the order of the quarters with spaces between them : ";
     for (int i=0;i<4;i++)
     {
         cin >> arr[i];
