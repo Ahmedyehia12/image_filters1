@@ -116,17 +116,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named target_1
+# Target rules for targets named target-1
 
 # Build rule for target.
-target_1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_1
-.PHONY : target_1
+target-1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target-1
+.PHONY : target-1
 
 # fast build rule for target.
-target_1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/build
-.PHONY : target_1/fast
+target-1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/build
+.PHONY : target-1/fast
 
 #=============================================================================
 # Target rules for targets named target-2
@@ -170,7 +170,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj: CS112-203-2nd-S3-202100
 
 # target to build an object file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
@@ -178,7 +178,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.i: CS112-203-2nd-S3-20210049
 
 # target to preprocess a source file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
@@ -186,7 +186,7 @@ CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.s: CS112-203-2nd-S3-20210049
 
 # target to generate assembly for a file
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_1.dir\build.make CMakeFiles/target_1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-1.dir\build.make CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
 .PHONY : CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
 
 # Help Target
@@ -197,8 +197,8 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... target-1
 	@echo ... target-2
-	@echo ... target_1
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s

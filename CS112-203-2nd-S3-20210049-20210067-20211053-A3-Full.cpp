@@ -30,6 +30,7 @@ void enlarge();
 void shuffle();
 void edge_detection();
 void mirror();
+void edge();
 
 bool check = true;
 
