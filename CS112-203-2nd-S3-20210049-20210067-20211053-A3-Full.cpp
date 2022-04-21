@@ -14,7 +14,6 @@
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
-unsigned char image2[SIZE/2][SIZE/2];
 
 void loadImage();
 void BW();
