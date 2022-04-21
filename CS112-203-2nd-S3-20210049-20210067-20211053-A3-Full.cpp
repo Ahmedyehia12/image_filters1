@@ -29,7 +29,7 @@ void enlarge();
 void shuffle();
 void edge_detection();
 void mirror();
-void edge();
+void input_order();
 
 bool check = true;
 
@@ -525,13 +525,27 @@ void mirror() {
 
 void shuffle()
 {
+
     unsigned char image1[256][256]={0};
     int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
     int arr[4];
     cout << "Enter the order of the quarters with spaces between them : ";
-    for (int i=0;i<4;i++)
-    {
-        cin >> arr[i];
+        for (int i=0;i<4;i++)
+        {
+            cin >> arr[i];}
+        bool check2 =true;
+    for(int i : arr){
+        if(arr[i]!= 1 && arr[i]!=2 && arr[i]!=3 && arr[i]!=4){
+            check2 = false;}}
+
+
+        while(check2 == false){
+            cout << "Invalid input ...please input order again:";
+            for(int i:arr){
+                cin >> arr[i];
+            }}
+        for(int i : arr){
+
         if(arr[i]==1)
         {
             a=0;
