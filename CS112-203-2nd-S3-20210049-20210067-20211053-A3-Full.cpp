@@ -195,7 +195,7 @@ void merge(){
     readGSBMP(imageFileName1,image1);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
-            image[i][j]=(image[i][j]+image1[i][j])/2;
+            image[i][j]=(image[i][j]+image1[i][j])/2; //average pixel of two images
         }
     }
 
@@ -295,7 +295,7 @@ void Dark_light() {
         case 'l':
             for (int i = 0; i < SIZE; i++) {
                 for (int j = 0; j < SIZE; j++) {
-                    image[i][j] = (image[i][j] + 255) / 2;
+                    image[i][j] = (image[i][j] + 255) / 2; //merging with white image..therefore lightining every pixel by 50%
                 }
             }
             break;
