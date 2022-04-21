@@ -525,7 +525,7 @@ void mirror() {
 
 void shuffle()
 {
-
+    int count=0;
     unsigned char image1[256][256]={0};
     int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
     int arr[4];
@@ -546,9 +546,12 @@ void shuffle()
             }
             for(int i=0;i<4;i++){
                 if(arr[i] == 1 ||arr[i]==2 || arr[i]==3 ||arr[i]==4){
-                    check2 = true;}
+                    count++;}}
+                if(count==4){check = true;
+                break;}
+                else{check = false;}
 
-                }
+
             }
 
         for(int i=0;i<4;i++){
