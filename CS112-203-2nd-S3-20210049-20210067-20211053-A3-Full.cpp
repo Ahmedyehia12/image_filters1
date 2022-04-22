@@ -462,19 +462,15 @@ void enlarge()
     }
 }
 void edge_detection(){
+    BW();
     unsigned char tempimage[SIZE][SIZE];
     long x,y,d;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j< SIZE; j++) {
+            if ((image[i][j]==image[i-1][j]) && (image[i][j]==image[i+1][j]) && (image[i][j]==image[i][j+1]) && (image[i][j]==image[i][j-1]))
+                tempimage[i][j]=255;
 
-            y=(image[i-1][j-1]+image[i-1][j]+image[i-1][j+1])-image[i+1][j-1]-image[i+1][j]-image[i+1][j+1];
 
-            x=(image[i-1][j-1]+image[i][j-1]+image[i+1][j-1])-image[i-1][j+1]-image[i][j-1]-image[i+1][j+1];
-            d=sqrt(x*x+y*y);
-            if (d>90)
-                tempimage[i][j] = 0;
-            else
-                tempimage[i][j] = 255;
         }
     }
     for (int i = 0; i < SIZE; i++) {
