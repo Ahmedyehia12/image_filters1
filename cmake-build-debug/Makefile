@@ -47,48 +47,48 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\ehab\CLionProjects\image_filters1
+CMAKE_SOURCE_DIR = C:\Users\hp\image_filters1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles C:\Users\hp\image_filters1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,24 +129,24 @@ target-1/fast:
 .PHONY : target-1/fast
 
 #=============================================================================
-# Target rules for targets named target_2
+# Target rules for targets named target-2
 
 # Build rule for target.
-target_2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target_2
-.PHONY : target_2
+target-2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 target-2
+.PHONY : target-2
 
 # fast build rule for target.
-target_2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/build
-.PHONY : target_2/fast
+target-2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/build
+.PHONY : target-2/fast
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 
 # target to build an object file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.obj
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
@@ -154,7 +154,7 @@ CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i: CS112-2022-2nd-S3-202100
 
 # target to preprocess a source file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.i
 
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s: CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
@@ -162,7 +162,7 @@ CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s: CS112-2022-2nd-S3-202100
 
 # target to generate assembly for a file
 CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\target_2.dir\build.make CMakeFiles/target_2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\target-2.dir\build.make CMakeFiles/target-2.dir/CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 .PHONY : CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.cpp.s
 
 CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.obj: CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj
@@ -198,7 +198,7 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... target-1
-	@echo ... target_2
+	@echo ... target-2
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.obj
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.i
 	@echo ... CS112-2022-2nd-S3-20210049-20210067-20211053-A3Bonus.s

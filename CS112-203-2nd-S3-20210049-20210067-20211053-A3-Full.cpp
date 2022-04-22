@@ -14,7 +14,6 @@
 
 using namespace std;
 unsigned char image[SIZE][SIZE];
-unsigned char image2[SIZE/2][SIZE/2];
 
 void loadImage();
 void BW();
@@ -30,6 +29,7 @@ void enlarge();
 void shuffle();
 void edge_detection();
 void mirror();
+void input_order();
 
 bool check = true;
 
@@ -195,7 +195,7 @@ void merge(){
     readGSBMP(imageFileName1,image1);
     for(int i =0;i<SIZE;i++){
         for(int j =0;j<SIZE;j++){
-            image[i][j]=(image[i][j]+image1[i][j])/2;
+            image[i][j]=(image[i][j]+image1[i][j])/2; //average pixel of two images
         }
     }
 
@@ -295,7 +295,7 @@ void Dark_light() {
         case 'l':
             for (int i = 0; i < SIZE; i++) {
                 for (int j = 0; j < SIZE; j++) {
-                    image[i][j] = (image[i][j] + 255) / 2;
+                    image[i][j] = (image[i][j] + 255) / 2; //merging with white image..therefore lightining every pixel by 50%
                 }
             }
             break;
@@ -521,13 +521,37 @@ void mirror() {
 
 void shuffle()
 {
+    int count=0;
     unsigned char image1[256][256]={0};
     int a=0,b=0,c=0,d=0,x=0,y=0,z,r;
     int arr[4];
-    cout << "Enter the order of the quarters : ";
-    for (int i=0;i<4;i++)
-    {
-        cin >> arr[i];
+    cout << "Enter the order of the quarters with spaces between them : ";
+        for (int i=0;i<4;i++)
+        {
+            cin >> arr[i];}
+        bool check2 =true;
+    for(int i=0;i<4;i++){
+        if(arr[i]!= 1 && arr[i]!=2 && arr[i]!=3 && arr[i]!=4){
+            check2 = false;}}
+
+
+        while(check2 == false){
+            cout << "Invalid input ...please input order again:";
+            for(int i=0;i<4;i++){
+                cin >> arr[i];
+            }
+            for(int i=0;i<4;i++){
+                if(arr[i] == 1 ||arr[i]==2 || arr[i]==3 ||arr[i]==4){
+                    count++;}}
+                if(count==4){check = true;
+                break;}
+                else{check = false;}
+
+
+            }
+
+        for(int i=0;i<4;i++){
+
         if(arr[i]==1)
         {
             a=0;

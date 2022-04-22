@@ -36,7 +36,7 @@ int main() {
     cout << "Ahlan ya user ya habibi\n";
     cout << "welcome to image filtering program!\n";
     while (check) {
-        cout << "xx1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n10-edge detection\n11-mirror\n12-shuffle\n"<<"0-end\n";
+        cout << "1-Black and White\n" << "2-Blur\n" << "3-flip\n" << "4-invert\n" << "5-merge\n"<<"6-Rotate\n"<<"7-Darken and lighten\n"<<"8-shrink\n9-enlarge\n10-edge detection\n11-mirror\n12-shuffle\n"<<"0-end\n";
         cout << "choose a filter for the image:";
         int choose;
         cin >> choose;

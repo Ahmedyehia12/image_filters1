@@ -43,19 +43,33 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
+<<<<<<< HEAD
 CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
 RM = "C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+=======
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe"
+
+# The command to remove a file.
+RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E rm -f
+>>>>>>> origin/master
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = C:\Users\ehab\CLionProjects\image_filters1
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = C:\Users\hp\image_filters1
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = C:\Users\hp\image_filters1\cmake-build-debug
+>>>>>>> origin/master
 
 # Include any dependencies generated for this target.
 include CMakeFiles/target-1.dir/depend.make
@@ -71,6 +85,7 @@ include CMakeFiles/target-1.dir/flags.make
 CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj: CMakeFiles/target-1.dir/flags.make
 CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj: ../CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp
 CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj: CMakeFiles/target-1.dir/compiler_depend.ts
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj -MF CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj.d -o CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj -c C:\Users\ehab\CLionProjects\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp
 
@@ -81,6 +96,18 @@ CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.
 CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ehab\CLionProjects\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp -o CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj -MF CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj.d -o CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.obj -c C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp
+
+CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp > CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.i
+
+CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/target-1.dir/CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hp\image_filters1\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp -o CMakeFiles\target-1.dir\CS112-203-2nd-S3-20210049-20210067-20211053-A3-Full.cpp.s
+>>>>>>> origin/master
 
 # Object files for target target-1
 target__1_OBJECTS = \
@@ -94,7 +121,11 @@ target-1.exe: CMakeFiles/target-1.dir/build.make
 target-1.exe: CMakeFiles/target-1.dir/linklibs.rsp
 target-1.exe: CMakeFiles/target-1.dir/objects1.rsp
 target-1.exe: CMakeFiles/target-1.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable target-1.exe"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable target-1.exe"
+>>>>>>> origin/master
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\target-1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +137,10 @@ CMakeFiles/target-1.dir/clean:
 .PHONY : CMakeFiles/target-1.dir/clean
 
 CMakeFiles/target-1.dir/depend:
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\ehab\CLionProjects\image_filters1 C:\Users\ehab\CLionProjects\image_filters1 C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug C:\Users\ehab\CLionProjects\image_filters1\cmake-build-debug\CMakeFiles\target-1.dir\DependInfo.cmake --color=$(COLOR)
+=======
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hp\image_filters1 C:\Users\hp\image_filters1 C:\Users\hp\image_filters1\cmake-build-debug C:\Users\hp\image_filters1\cmake-build-debug C:\Users\hp\image_filters1\cmake-build-debug\CMakeFiles\target-1.dir\DependInfo.cmake --color=$(COLOR)
+>>>>>>> origin/master
 .PHONY : CMakeFiles/target-1.dir/depend
 
